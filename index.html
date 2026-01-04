@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <!-- Basic Meta -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Harsha P – Frontend Developer with 3+ years experience building scalable, performant, and accessible web interfaces." />
+  <meta name="author" content="Harsha P" />
+
+  <!-- SEO -->
+  <title>Harsha P | Frontend Developer</title>
+
+  <!-- Open Graph (optional but professional) -->
+  <meta property="og:title" content="Harsha P | Frontend Developer" />
+  <meta property="og:description" content="Frontend Developer specializing in scalable, performant web interfaces." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.harshap.dev" />
+
+  <!-- Styles (ROOT → src) -->
+  <link rel="stylesheet" href="src/styles/base.css" />
+  <link rel="stylesheet" href="src/styles/layout.css" />
+  <link rel="stylesheet" href="src/styles/components.css" />
+  <link rel="stylesheet" href="src/styles/themes.css" />
+  <link rel="stylesheet" href="src/styles/animations.css" />
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <h1 class="logo">Harsha P</h1>
+
+    <nav class="main-nav" aria-label="Primary navigation">
+      <a href="/" aria-current="page">Home</a>
+      <a href="src/pages/projects.html">Projects</a>
+      <a href="src/pages/contact.html">Contact</a>
+    </nav>
+
+    <button
+      id="themeToggle"
+      class="theme-toggle"
+      aria-label="Toggle dark mode"
+      aria-pressed="false"
+      type="button"
+    >
+      🌙
+    </button>
+  </header>
+
+  <!-- Main -->
+  <main id="main-content">
+    <!-- Hero Section -->
+    <section class="hero reveal">
+      <h2>Frontend Developer</h2>
+      <p>
+        Building scalable, performant, and accessible web experiences using
+        modern frontend technologies.
+      </p>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects reveal">
+      <h3>Selected Projects</h3>
+
+      <div class="projects-grid" id="projectsGrid" aria-live="polite">
+        <!-- Skeleton loaders (shown until JS replaces them) -->
+        <div class="project-card skeleton" aria-hidden="true"></div>
+        <div class="project-card skeleton" aria-hidden="true"></div>
+        <div class="project-card skeleton" aria-hidden="true"></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p>© 2026 Harsha P. All rights reserved.</p>
+  </footer>
+
+  <!-- Scripts (ROOT → src) -->
+  <script src="src/scripts/themeToggle.js" defer></script>
+  <script src="src/scripts/scrollAnimation.js" defer></script>
+  <script src="src/scripts/performance.js" defer></script>
+  <script src="src/scripts/main.js" defer></script>
+</body>
+</html>

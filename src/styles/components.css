@@ -1,0 +1,25 @@
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+.project-card {
+  padding: var(--space-md);
+  border-radius: var(--radius-md);
+  background: #f9fafb;
+}
+
+/* Skeleton */
+.skeleton {
+  height: 200px;
+  background: linear-gradient(
+    100deg,
+    #e5e7eb 30%,
+    #f3f4f6 50%,
+    #e5e7eb 70%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.4s infinite;
+}
