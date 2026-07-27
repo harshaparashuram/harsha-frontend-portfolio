@@ -7,17 +7,20 @@
   <title>Harsha P | Frontend Engineer Portfolio</title>
 
   <!-- SEO & Meta Tags -->
-  <meta name="description" content="Frontend Engineer with 3.7+ years of experience building enterprise web applications, dashboards, and CMS platforms with React, TypeScript & JavaScript.">
+  <meta name="description"
+    content="Frontend Engineer with 3.7+ years of experience building enterprise web applications, dashboards, and CMS platforms with React, TypeScript & JavaScript.">
   <meta name="keywords" content="Frontend Engineer, React Developer, TypeScript, JavaScript, Portfolio, Harsha P">
   <meta name="author" content="Harsha P">
   <meta property="og:title" content="Harsha P | Frontend Engineer Portfolio">
   <meta property="og:image" content="/public/images/profile/HarshaProfilePic.png">
-  <meta property="og:description" content="Frontend Engineer specializing in React, TypeScript, and scalable web applications.">
+  <meta property="og:description"
+    content="Frontend Engineer specializing in React, TypeScript, and scalable web applications.">
   <meta property="og:url" content="https://www.harshap.dev">
   <meta property="og:type" content="website">
   <meta name="theme-color" content="#000319">
   <meta name="robots" content="index, follow">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>H</text></svg>">
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>HP</text></svg>">
 
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
@@ -228,6 +231,7 @@
         opacity: 0;
         transform: translateY(-20px);
       }
+
       to {
         opacity: 1;
         transform: translateY(0);
@@ -491,7 +495,7 @@
       line-height: 1.7;
       color: var(--text-secondary);
       margin-bottom: var(--space-lg);
-      max-width: 90%;
+      max-width: 80%;
     }
 
     .trustBadges {
@@ -575,7 +579,7 @@
       border-radius: var(--radius-lg);
       overflow: hidden;
       border: 1px solid var(--border-subtle);
-      box-shadow: var(--shadow-lg);
+      box-shadow: var(--shadow-lg), 0 0 40px rgba(79, 195, 247, 0.1);
       background: var(--bg-tertiary);
     }
 
@@ -625,18 +629,20 @@
       left: -50%;
       width: 200%;
       height: 200%;
-      background: radial-gradient(circle at center, rgba(79, 195, 247, 0.1) 0%, transparent 70%);
+      background: radial-gradient(circle at center, rgba(79, 195, 247, 0.15) 0%, transparent 70%);
       z-index: -1;
       border-radius: 50%;
       animation: pulseGlow 4s ease-in-out infinite;
     }
 
     @keyframes pulseGlow {
+
       0%,
       100% {
         transform: scale(1);
         opacity: 0.5;
       }
+
       50% {
         transform: scale(1.1);
         opacity: 1;
@@ -1009,7 +1015,7 @@
     .projectImageWrapper {
       position: relative;
       overflow: hidden;
-      height: 200px;
+      height: 220px;
       background: var(--bg-tertiary);
     }
 
@@ -1030,7 +1036,7 @@
       left: 0;
       right: 0;
       padding: var(--space-md);
-      background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+      background: linear-gradient(transparent, rgba(0, 0, 0, 0.85));
       display: flex;
       gap: 8px;
       flex-wrap: wrap;
@@ -1301,7 +1307,7 @@
     }
 
     .expertiseIcon {
-      font-size: 2.5rem;
+      font-size: 2.8rem;
       color: var(--accent-primary);
       margin-bottom: var(--space-md);
       display: inline-block;
@@ -1502,7 +1508,7 @@
 
     .githubGrid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
       gap: var(--space-lg);
       margin-top: var(--space-xl);
     }
@@ -1555,6 +1561,27 @@
     .githubCard .github-stats span i {
       font-size: 1rem;
       margin-right: 4px;
+    }
+
+    .githubCard .contribution-graph {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 3px;
+      margin: var(--space-md) 0;
+      padding: 0 var(--space-sm);
+    }
+
+    .githubCard .contribution-graph .dot {
+      height: 12px;
+      border-radius: 2px;
+      background: var(--accent-primary);
+      opacity: 0.2;
+      transition: opacity var(--transition-fast) var(--ease-out);
+    }
+
+    .githubCard .contribution-graph .dot:hover {
+      opacity: 1;
+      transform: scale(1.2);
     }
 
     /* =====================================================
@@ -1764,6 +1791,7 @@
         opacity: 0;
         transform: translateY(30px);
       }
+
       to {
         opacity: 1;
         transform: translateY(0);
@@ -1775,6 +1803,7 @@
         opacity: 0;
         transform: translateY(30px) scale(0.9);
       }
+
       to {
         opacity: 1;
         transform: translateY(0) scale(1);
@@ -1782,10 +1811,12 @@
     }
 
     @keyframes blink {
+
       0%,
       100% {
         opacity: 1;
       }
+
       50% {
         opacity: 0;
       }
@@ -1796,6 +1827,7 @@
         opacity: 0;
         transform: translateY(20px);
       }
+
       to {
         opacity: 1;
         transform: translateY(0);
@@ -1803,11 +1835,13 @@
     }
 
     @keyframes pulseGlow {
+
       0%,
       100% {
         transform: scale(1);
         opacity: 0.5;
       }
+
       50% {
         transform: scale(1.1);
         opacity: 1;
@@ -2328,30 +2362,39 @@
     .mt-1 {
       margin-top: var(--space-xs);
     }
+
     .mt-2 {
       margin-top: var(--space-sm);
     }
+
     .mt-3 {
       margin-top: var(--space-md);
     }
+
     .mt-4 {
       margin-top: var(--space-lg);
     }
+
     .mt-5 {
       margin-top: var(--space-xl);
     }
+
     .mb-1 {
       margin-bottom: var(--space-xs);
     }
+
     .mb-2 {
       margin-bottom: var(--space-sm);
     }
+
     .mb-3 {
       margin-bottom: var(--space-md);
     }
+
     .mb-4 {
       margin-bottom: var(--space-lg);
     }
+
     .mb-5 {
       margin-bottom: var(--space-xl);
     }
@@ -2419,7 +2462,8 @@
         <div class="homeHeroContent">
           <div class="availabilityStatus">
             <i class="fas fa-circle"></i>
-            Available for Frontend Engineer, React Developer &amp; Full Stack Developer opportunities • Open to Remote, Hybrid &amp; Relocation
+            Available for Frontend Engineer, React Developer &amp; Full Stack Developer opportunities • Open to Remote,
+            Hybrid &amp; Relocation
           </div>
 
           <p class="heroIntro">
@@ -2436,7 +2480,9 @@
           </p>
 
           <p class="heroDescription">
-            Frontend Engineer with 3.7+ years of experience building enterprise web applications, dashboards, CMS platforms, and responsive user interfaces. I specialize in React.js, TypeScript, JavaScript, REST APIs, and creating scalable, maintainable frontend architectures.
+            Frontend Engineer with 3.7+ years of experience building enterprise web applications, dashboards, CMS
+            platforms, and responsive user interfaces. I specialize in React.js, TypeScript, JavaScript, REST APIs, and
+            creating scalable, maintainable frontend architectures.
           </p>
 
           <div class="trustBadges">
@@ -2519,9 +2565,14 @@
 
         <div class="aboutContent">
           <div class="aboutText">
-            <p>I'm a Frontend Engineer with 3.7+ years of experience building enterprise-grade web applications. I've worked on large-scale platforms including CMS systems, dashboard interfaces, and responsive web applications that serve thousands of users.</p>
-            <p>I contribute to frontend development across multiple client projects in collaboration with designers, backend developers, QA engineers, and stakeholders. My work involves integrating REST APIs, optimizing performance, and building reusable component libraries that accelerate development across projects.</p>
-            <p>I'm passionate about creating clean, maintainable code and believe in the power of great user experiences and the importance of performance in modern web applications.</p>
+            <p>I'm a Frontend Engineer with 3.7+ years of experience building enterprise-grade web applications. I've
+              worked on large-scale platforms including CMS systems, dashboard interfaces, and responsive web
+              applications that serve thousands of users.</p>
+            <p>I contribute to frontend development across multiple client projects in collaboration with designers,
+              backend developers, QA engineers, and stakeholders. My work involves integrating REST APIs, optimizing
+              performance, and building reusable component libraries that accelerate development across projects.</p>
+            <p>I'm passionate about creating clean, maintainable code and believe in the power of great user experiences
+              and the importance of performance in modern web applications.</p>
           </div>
 
           <div class="aboutStats">
@@ -2584,10 +2635,14 @@
 
         <div class="skillsDescription">
           <h3 class="mb-3">Technical Expertise</h3>
-          <p class="aboutText mb-4">I specialize in building responsive, high-performance web applications with modern JavaScript frameworks. My experience spans the full frontend stack, from design systems to API integration and performance optimization.</p>
+          <p class="aboutText mb-4">I specialize in building responsive, high-performance web applications with modern
+            JavaScript frameworks. My experience spans the full frontend stack, from design systems to API integration
+            and performance optimization.</p>
 
           <h3 class="mb-3">Development Process</h3>
-          <p class="aboutText">I follow agile methodologies, writing clean, modular, and well-documented code. I prioritize accessibility, cross-browser compatibility, and mobile-first design to ensure applications work seamlessly for all users.</p>
+          <p class="aboutText">I follow agile methodologies, writing clean, modular, and well-documented code. I
+            prioritize accessibility, cross-browser compatibility, and mobile-first design to ensure applications work
+            seamlessly for all users.</p>
 
           <div class="additionalSkills">
             <h4>Learning &amp; Foundations</h4>
@@ -2642,7 +2697,7 @@
         <div class="projectCard">
           <div class="projectImageWrapper">
             <img
-              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='200'%3E%3Crect width='600' height='200' fill='%2313193d'/%3E%3Ctext x='50%25' y='50%25' font-family='Inter, sans-serif' font-size='16' fill='%234fc3f7' text-anchor='middle' dy='.3em'%3ECMS Dashboard — Content Management%3C/text%3E%3C/svg%3E"
+              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='220'%3E%3Crect width='600' height='220' fill='%2313193d'/%3E%3Ctext x='50%25' y='50%25' font-family='Inter, sans-serif' font-size='16' fill='%234fc3f7' text-anchor='middle' dy='.3em'%3E%F0%9F%96%A5%EF%B8%8F CMS Dashboard — Content Management%3C/text%3E%3C/svg%3E"
               alt="Digital Art & Gallery Platform UI Mockup" class="projectImage">
             <div class="projectImageOverlay">
               <span>Enterprise CMS</span>
@@ -2663,12 +2718,15 @@
 
             <div class="caseSection">
               <span class="caseLabel">Problem</span>
-              <p class="caseText">Migrating a large digital art platform from WordPress to a modern frontend architecture while preserving existing design, improving maintainability, and enabling faster content updates.</p>
+              <p class="caseText">Migrating a large digital art platform from WordPress to a modern frontend
+                architecture while preserving existing design, improving maintainability, and enabling faster content
+                updates.</p>
             </div>
 
             <div class="caseSection">
               <span class="caseLabel">My Role</span>
-              <p class="caseText role-summary">Frontend Engineer — Collaborated with UI/UX designers and backend engineers</p>
+              <p class="caseText role-summary">Frontend Engineer — Collaborated with UI/UX designers and backend
+                engineers</p>
               <div class="caseText">
                 <ul>
                   <li>Developed 15+ reusable React components</li>
@@ -2730,7 +2788,7 @@
         <div class="projectCard">
           <div class="projectImageWrapper">
             <img
-              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='200'%3E%3Crect width='600' height='200' fill='%2313193d'/%3E%3Ctext x='50%25' y='50%25' font-family='Inter, sans-serif' font-size='16' fill='%234fc3f7' text-anchor='middle' dy='.3em'%3EAdmin Panel — Leave Management%3C/text%3E%3C/svg%3E"
+              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='220'%3E%3Crect width='600' height='220' fill='%2313193d'/%3E%3Ctext x='50%25' y='50%25' font-family='Inter, sans-serif' font-size='16' fill='%234fc3f7' text-anchor='middle' dy='.3em'%3E%F0%9F%93%8B Admin Panel — Leave Management%3C/text%3E%3C/svg%3E"
               alt="Leave Management System UI Mockup" class="projectImage">
             <div class="projectImageOverlay">
               <span>Enterprise Application</span>
@@ -2751,7 +2809,8 @@
 
             <div class="caseSection">
               <span class="caseLabel">Problem</span>
-              <p class="caseText">Manual leave tracking was causing errors and delays in approval workflows. Needed a centralized system with role-based access, real-time notifications, and calendar integration.</p>
+              <p class="caseText">Manual leave tracking was causing errors and delays in approval workflows. Needed a
+                centralized system with role-based access, real-time notifications, and calendar integration.</p>
             </div>
 
             <div class="caseSection">
@@ -2816,7 +2875,7 @@
         <div class="projectCard">
           <div class="projectImageWrapper">
             <img
-              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='200'%3E%3Crect width='600' height='200' fill='%2313193d'/%3E%3Ctext x='50%25' y='50%25' font-family='Inter, sans-serif' font-size='16' fill='%234fc3f7' text-anchor='middle' dy='.3em'%3EDashboard — Interview Scheduling%3C/text%3E%3C/svg%3E"
+              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='220'%3E%3Crect width='600' height='220' fill='%2313193d'/%3E%3Ctext x='50%25' y='50%25' font-family='Inter, sans-serif' font-size='16' fill='%234fc3f7' text-anchor='middle' dy='.3em'%3E%F0%9F%93%8A Dashboard — Interview Scheduling%3C/text%3E%3C/svg%3E"
               alt="Interview Scheduling System UI Mockup" class="projectImage">
             <div class="projectImageOverlay">
               <span>SaaS Platform</span>
@@ -2837,12 +2896,14 @@
 
             <div class="caseSection">
               <span class="caseLabel">Problem</span>
-              <p class="caseText">Recruitment teams struggled with manual interview coordination across multiple candidates and interviewers, leading to scheduling conflicts and delayed hiring cycles.</p>
+              <p class="caseText">Recruitment teams struggled with manual interview coordination across multiple
+                candidates and interviewers, leading to scheduling conflicts and delayed hiring cycles.</p>
             </div>
 
             <div class="caseSection">
               <span class="caseLabel">My Role</span>
-              <p class="caseText role-summary">Frontend Engineer — Collaborated with product team and backend engineers</p>
+              <p class="caseText role-summary">Frontend Engineer — Collaborated with product team and backend engineers
+              </p>
               <div class="caseText">
                 <ul>
                   <li>Built the recruiter dashboard and candidate portal</li>
@@ -2902,7 +2963,7 @@
         <div class="projectCard">
           <div class="projectImageWrapper">
             <img
-              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='200'%3E%3Crect width='600' height='200' fill='%2313193d'/%3E%3Ctext x='50%25' y='50%25' font-family='Inter, sans-serif' font-size='16' fill='%234fc3f7' text-anchor='middle' dy='.3em'%3ECMS Admin — Enterprise Platform%3C/text%3E%3C/svg%3E"
+              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='220'%3E%3Crect width='600' height='220' fill='%2313193d'/%3E%3Ctext x='50%25' y='50%25' font-family='Inter, sans-serif' font-size='16' fill='%234fc3f7' text-anchor='middle' dy='.3em'%3E%F0%9F%96%A5%EF%B8%8F CMS Admin — Enterprise Platform%3C/text%3E%3C/svg%3E"
               alt="Enterprise CMS Platform UI Mockup" class="projectImage">
             <div class="projectImageOverlay">
               <span>Content Management</span>
@@ -2923,12 +2984,14 @@
 
             <div class="caseSection">
               <span class="caseLabel">Problem</span>
-              <p class="caseText">Large organizations needed a flexible content management solution that could support multiple sites, complex content workflows, and version control without developer dependency.</p>
+              <p class="caseText">Large organizations needed a flexible content management solution that could support
+                multiple sites, complex content workflows, and version control without developer dependency.</p>
             </div>
 
             <div class="caseSection">
               <span class="caseLabel">My Role</span>
-              <p class="caseText role-summary">Frontend Engineer — Worked with product designers and backend engineers</p>
+              <p class="caseText role-summary">Frontend Engineer — Worked with product designers and backend engineers
+              </p>
               <div class="caseText">
                 <ul>
                   <li>Built the admin interface with React and TypeScript</li>
@@ -2988,7 +3051,7 @@
         <div class="projectCard">
           <div class="projectImageWrapper">
             <img
-              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='200'%3E%3Crect width='600' height='200' fill='%2313193d'/%3E%3Ctext x='50%25' y='50%25' font-family='Inter, sans-serif' font-size='16' fill='%234fc3f7' text-anchor='middle' dy='.3em'%3EBrand Website — Cannes Experience%3C/text%3E%3C/svg%3E"
+              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='220'%3E%3Crect width='600' height='220' fill='%2313193d'/%3E%3Ctext x='50%25' y='50%25' font-family='Inter, sans-serif' font-size='16' fill='%234fc3f7' text-anchor='middle' dy='.3em'%3E%F0%9F%8F%9B%EF%B8%8F Brand Website — Cannes Experience%3C/text%3E%3C/svg%3E"
               alt="Cannes Brand Website UI Mockup" class="projectImage">
             <div class="projectImageOverlay">
               <span>Brand Website</span>
@@ -3009,12 +3072,14 @@
 
             <div class="caseSection">
               <span class="caseLabel">Problem</span>
-              <p class="caseText">A luxury lifestyle brand needed a premium digital presence with immersive visuals, interactive galleries, and seamless shopping experience across all devices.</p>
+              <p class="caseText">A luxury lifestyle brand needed a premium digital presence with immersive visuals,
+                interactive galleries, and seamless shopping experience across all devices.</p>
             </div>
 
             <div class="caseSection">
               <span class="caseLabel">My Role</span>
-              <p class="caseText role-summary">Frontend Engineer — Collaborated with UI/UX designers and creative team</p>
+              <p class="caseText role-summary">Frontend Engineer — Collaborated with UI/UX designers and creative team
+              </p>
               <div class="caseText">
                 <ul>
                   <li>Built the frontend with React and TypeScript</li>
@@ -3074,7 +3139,7 @@
         <div class="projectCard">
           <div class="projectImageWrapper">
             <img
-              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='200'%3E%3Crect width='600' height='200' fill='%2313193d'/%3E%3Ctext x='50%25' y='50%25' font-family='Inter, sans-serif' font-size='16' fill='%234fc3f7' text-anchor='middle' dy='.3em'%3EGallery — Dragon Year Exhibition%3C/text%3E%3C/svg%3E"
+              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='220'%3E%3Crect width='600' height='220' fill='%2313193d'/%3E%3Ctext x='50%25' y='50%25' font-family='Inter, sans-serif' font-size='16' fill='%234fc3f7' text-anchor='middle' dy='.3em'%3E%F0%9F%8E%A8 Gallery — Dragon Year Exhibition%3C/text%3E%3C/svg%3E"
               alt="Dragon Year Gallery UI Mockup" class="projectImage">
             <div class="projectImageOverlay">
               <span>Gallery</span>
@@ -3095,7 +3160,8 @@
 
             <div class="caseSection">
               <span class="caseLabel">Problem</span>
-              <p class="caseText">Contemporary art gallery needed a digital platform to showcase curated collections with artist profiles, virtual exhibitions, and seamless content management.</p>
+              <p class="caseText">Contemporary art gallery needed a digital platform to showcase curated collections
+                with artist profiles, virtual exhibitions, and seamless content management.</p>
             </div>
 
             <div class="caseSection">
@@ -3169,37 +3235,43 @@
         <div class="expertiseCard">
           <div class="expertiseIcon"><i class="fas fa-laptop-code"></i></div>
           <h3 class="expertiseTitle">Frontend Engineering</h3>
-          <p class="expertiseDescription">Building responsive, accessible, and high-performance web applications with React, TypeScript, and modern JavaScript frameworks.</p>
+          <p class="expertiseDescription">Building responsive, accessible, and high-performance web applications with
+            React, TypeScript, and modern JavaScript frameworks.</p>
         </div>
 
         <div class="expertiseCard">
           <div class="expertiseIcon"><i class="fas fa-rocket"></i></div>
           <h3 class="expertiseTitle">Performance Optimization</h3>
-          <p class="expertiseDescription">Optimizing load times, rendering performance, and user experience through code splitting, lazy loading, and efficient state management.</p>
+          <p class="expertiseDescription">Optimizing load times, rendering performance, and user experience through code
+            splitting, lazy loading, and efficient state management.</p>
         </div>
 
         <div class="expertiseCard">
           <div class="expertiseIcon"><i class="fas fa-layer-group"></i></div>
           <h3 class="expertiseTitle">Responsive Architecture</h3>
-          <p class="expertiseDescription">Designing scalable, maintainable frontend architectures that work seamlessly across all devices and screen sizes.</p>
+          <p class="expertiseDescription">Designing scalable, maintainable frontend architectures that work seamlessly
+            across all devices and screen sizes.</p>
         </div>
 
         <div class="expertiseCard">
           <div class="expertiseIcon"><i class="fas fa-plug"></i></div>
           <h3 class="expertiseTitle">API Integration</h3>
-          <p class="expertiseDescription">Integrating RESTful APIs and third-party services to create powerful, data-driven applications with robust error handling.</p>
+          <p class="expertiseDescription">Integrating RESTful APIs and third-party services to create powerful,
+            data-driven applications with robust error handling.</p>
         </div>
 
         <div class="expertiseCard">
           <div class="expertiseIcon"><i class="fas fa-puzzle-piece"></i></div>
           <h3 class="expertiseTitle">Component Libraries</h3>
-          <p class="expertiseDescription">Building reusable, well-documented component libraries that accelerate development and ensure design consistency across projects.</p>
+          <p class="expertiseDescription">Building reusable, well-documented component libraries that accelerate
+            development and ensure design consistency across projects.</p>
         </div>
 
         <div class="expertiseCard">
           <div class="expertiseIcon"><i class="fas fa-universal-access"></i></div>
           <h3 class="expertiseTitle">Accessibility</h3>
-          <p class="expertiseDescription">Ensuring web applications are accessible to all users through semantic HTML, ARIA attributes, and inclusive design practices.</p>
+          <p class="expertiseDescription">Ensuring web applications are accessible to all users through semantic HTML,
+            ARIA attributes, and inclusive design practices.</p>
         </div>
       </div>
     </div>
@@ -3248,7 +3320,8 @@
             <div class="resumeSubtitle">72 Dragons (The Dragon Year Limited)</div>
             <div class="resumeDescription">
               <ul>
-                <li>Built responsive web applications using React, TypeScript, and JavaScript with PHP backend integration.</li>
+                <li>Built responsive web applications using React, TypeScript, and JavaScript with PHP backend
+                  integration.</li>
                 <li>Collaborated with cross-functional teams to deliver solutions across 15+ client projects.</li>
                 <li>Implemented testing strategies that improved code quality and reduced bugs by 30%.</li>
                 <li>Integrated REST APIs and optimized performance for enterprise applications.</li>
@@ -3276,7 +3349,8 @@
             <span><i class="fas fa-star"></i> 8</span>
             <span><i class="fas fa-eye"></i> 15</span>
           </div>
-          <a href="https://github.com/harshaparashuram" target="_blank" class="primaryButton" style="margin-top: var(--space-md); display: inline-flex; padding: 10px 20px; font-size: 0.9rem;">
+          <a href="https://github.com/harshaparashuram" target="_blank" class="primaryButton"
+            style="margin-top: var(--space-md); display: inline-flex; padding: 10px 20px; font-size: 0.9rem;">
             <i class="fab fa-github"></i> View GitHub
           </a>
         </div>
@@ -3285,19 +3359,19 @@
           <i class="fas fa-code"></i>
           <h3>Contribution Graph</h3>
           <p>Active contributions and commit history</p>
-          <div style="display: grid; grid-template-columns: repeat(12, 1fr); gap: 3px; margin: var(--space-md) 0;">
-            <div style="height: 12px; background: var(--accent-primary); border-radius: 2px; opacity: 0.2;"></div>
-            <div style="height: 12px; background: var(--accent-primary); border-radius: 2px; opacity: 0.4;"></div>
-            <div style="height: 12px; background: var(--accent-primary); border-radius: 2px; opacity: 0.6;"></div>
-            <div style="height: 12px; background: var(--accent-primary); border-radius: 2px; opacity: 0.8;"></div>
-            <div style="height: 12px; background: var(--accent-primary); border-radius: 2px; opacity: 0.3;"></div>
-            <div style="height: 12px; background: var(--accent-primary); border-radius: 2px; opacity: 0.5;"></div>
-            <div style="height: 12px; background: var(--accent-primary); border-radius: 2px; opacity: 0.7;"></div>
-            <div style="height: 12px; background: var(--accent-primary); border-radius: 2px; opacity: 0.9;"></div>
-            <div style="height: 12px; background: var(--accent-primary); border-radius: 2px; opacity: 0.4;"></div>
-            <div style="height: 12px; background: var(--accent-primary); border-radius: 2px; opacity: 0.6;"></div>
-            <div style="height: 12px; background: var(--accent-primary); border-radius: 2px; opacity: 0.8;"></div>
-            <div style="height: 12px; background: var(--accent-primary); border-radius: 2px; opacity: 0.5;"></div>
+          <div class="contribution-graph">
+            <div class="dot" style="opacity:0.2;"></div>
+            <div class="dot" style="opacity:0.4;"></div>
+            <div class="dot" style="opacity:0.6;"></div>
+            <div class="dot" style="opacity:0.8;"></div>
+            <div class="dot" style="opacity:0.3;"></div>
+            <div class="dot" style="opacity:0.5;"></div>
+            <div class="dot" style="opacity:0.7;"></div>
+            <div class="dot" style="opacity:0.9;"></div>
+            <div class="dot" style="opacity:0.4;"></div>
+            <div class="dot" style="opacity:0.6;"></div>
+            <div class="dot" style="opacity:0.8;"></div>
+            <div class="dot" style="opacity:0.5;"></div>
           </div>
         </div>
       </div>
@@ -3314,7 +3388,8 @@
         <div class="testimonialCard">
           <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
           <blockquote>
-            "Harsha consistently delivered high-quality frontend implementations with attention to detail. His ability to translate complex design requirements into clean, performant code made him a valuable asset to our team."
+            "Harsha consistently delivered high-quality frontend implementations with attention to detail. His ability
+            to translate complex design requirements into clean, performant code made him a valuable asset to our team."
           </blockquote>
           <div class="attribution">
             <div>
@@ -3327,7 +3402,9 @@
         <div class="testimonialCard">
           <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
           <blockquote>
-            "Working with Harsha was a great experience. He has a strong understanding of React and TypeScript, and he always ensured that the user experience was top-notch. His collaborative approach made our projects run smoothly."
+            "Working with Harsha was a great experience. He has a strong understanding of React and TypeScript, and he
+            always ensured that the user experience was top-notch. His collaborative approach made our projects run
+            smoothly."
           </blockquote>
           <div class="attribution">
             <div>
@@ -3344,7 +3421,8 @@
   <section class="contactSection" id="contact">
     <div class="container">
       <h2 class="section-title text-center">Let's Build Something Great</h2>
-      <p class="section-subtitle text-center">Have a project in mind? Let's discuss how we can work together to bring your ideas to life.</p>
+      <p class="section-subtitle text-center">Have a project in mind? Let's discuss how we can work together to bring
+        your ideas to life.</p>
 
       <div class="contactContainer">
         <div class="contactInfo">
@@ -3393,22 +3471,26 @@
 
             <div class="formGroup">
               <label for="name" class="formLabel">Full Name</label>
-              <input name="name" required type="text" id="name" class="formInput" placeholder="Enter your name" required>
+              <input name="name" required type="text" id="name" class="formInput" placeholder="Enter your name"
+                required>
             </div>
 
             <div class="formGroup">
               <label for="email" class="formLabel">Email Address</label>
-              <input name="email" required type="email" id="email" class="formInput" placeholder="Enter your email" required>
+              <input name="email" required type="email" id="email" class="formInput" placeholder="Enter your email"
+                required>
             </div>
 
             <div class="formGroup">
               <label for="subject" class="formLabel">Subject</label>
-              <input name="subject" type="text" id="subject" class="formInput" placeholder="Project or inquiry subject" required>
+              <input name="subject" type="text" id="subject" class="formInput" placeholder="Project or inquiry subject"
+                required>
             </div>
 
             <div class="formGroup">
               <label for="message" class="formLabel">Message</label>
-              <textarea name="message" required id="message" class="formTextarea" placeholder="Tell me about your project or inquiry..." required></textarea>
+              <textarea name="message" required id="message" class="formTextarea"
+                placeholder="Tell me about your project or inquiry..." required></textarea>
             </div>
 
             <div style="display: none;">
@@ -3425,15 +3507,19 @@
   </section>
 
   <!-- Footer -->
-  <footer style="background-color: var(--bg-tertiary); padding: var(--space-lg) 0; border-top: 1px solid var(--border-subtle);">
+  <footer
+    style="background-color: var(--bg-tertiary); padding: var(--space-lg) 0; border-top: 1px solid var(--border-subtle);">
     <div class="container">
       <div class="text-center">
         <p class="mb-1" style="color: var(--text-tertiary); font-weight: 500;">Let's Build Something Great</p>
         <div style="display: flex; justify-content: center; gap: var(--space-md); margin: var(--space-sm) 0;">
           <a href="mailto:harshaguru321@gmail.com" style="color: var(--text-tertiary); font-size: 0.9rem;">Email</a>
-          <a href="https://linkedin.com/in/HarshaP1307" target="_blank" style="color: var(--text-tertiary); font-size: 0.9rem;">LinkedIn</a>
-          <a href="https://github.com/harshaparashuram" target="_blank" style="color: var(--text-tertiary); font-size: 0.9rem;">GitHub</a>
-          <a href="/resume/Harsha_P_Resume.pdf" download style="color: var(--text-tertiary); font-size: 0.9rem;">Resume</a>
+          <a href="https://linkedin.com/in/HarshaP1307" target="_blank"
+            style="color: var(--text-tertiary); font-size: 0.9rem;">LinkedIn</a>
+          <a href="https://github.com/harshaparashuram" target="_blank"
+            style="color: var(--text-tertiary); font-size: 0.9rem;">GitHub</a>
+          <a href="/resume/Harsha_P_Resume.pdf" download
+            style="color: var(--text-tertiary); font-size: 0.9rem;">Resume</a>
         </div>
         <p style="color: var(--text-tertiary); font-size: 0.85rem;">© 2026 Harsha P</p>
       </div>
@@ -3520,7 +3606,7 @@
       document.querySelectorAll('.projectCard, .expertiseCard, .resumeItem, .contactCard, .highlightItem, .testimonialCard, .timelineItem, .githubCard, .buildingItem').forEach(el => observer.observe(el));
 
       document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
+        anchor.addEventListener('click', function (e) {
           const targetId = this.getAttribute('href');
           if (targetId === '#') return;
           const targetElement = document.querySelector(targetId);
