@@ -20,7 +20,7 @@
   <meta name="theme-color" content="#000319">
   <meta name="robots" content="index, follow">
   <link rel="icon"
-    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>H</text></svg>">
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>HP</text></svg>">
 
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
@@ -905,15 +905,48 @@
       border-color: var(--accent-primary);
     }
 
+    .projectImageWrapper {
+      position: relative;
+      overflow: hidden;
+      height: 200px;
+    }
+
     .projectImage {
       width: 100%;
-      height: 200px;
+      height: 100%;
       object-fit: cover;
       transition: transform var(--transition-medium) var(--ease-out);
     }
 
     .projectCard:hover .projectImage {
-      transform: scale(1.03);
+      transform: scale(1.05);
+    }
+
+    .projectImageOverlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: var(--space-md);
+      background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      opacity: 0;
+      transition: opacity var(--transition-medium) var(--ease-out);
+    }
+
+    .projectCard:hover .projectImageOverlay {
+      opacity: 1;
+    }
+
+    .projectImageOverlay span {
+      padding: 4px 10px;
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: var(--radius-xl);
+      font-size: 0.7rem;
+      color: var(--text-secondary);
+      border: 1px solid var(--border-subtle);
     }
 
     .projectContent {
@@ -979,10 +1012,14 @@
     /* Case Study Sections */
     .caseSection {
       margin-bottom: var(--space-md);
+      padding-bottom: var(--space-sm);
+      border-bottom: 1px solid var(--border-subtle);
     }
 
     .caseSection:last-child {
+      border-bottom: none;
       margin-bottom: 0;
+      padding-bottom: 0;
     }
 
     .caseLabel {
@@ -1018,6 +1055,12 @@
       position: absolute;
       left: 0;
       color: var(--accent-primary);
+    }
+
+    .caseText.role-summary {
+      font-weight: 500;
+      color: var(--text-primary);
+      margin-bottom: 6px;
     }
 
     .projectTech {
@@ -2224,9 +2267,16 @@
       <div class="projectsGrid">
         <!-- Case Study 1: Digital Art & Gallery Platform -->
         <div class="projectCard">
-          <img
-            src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-            alt="Digital Art & Gallery Platform" class="projectImage">
+          <div class="projectImageWrapper">
+            <img
+              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='200'%3E%3Crect width='600' height='200' fill='%2313193d'/%3E%3Ctext x='50%25' y='50%25' font-family='Inter, sans-serif' font-size='18' fill='%234fc3f7' text-anchor='middle' dy='.3em'%3EUI Mockup — Digital Art Platform%3C/text%3E%3C/svg%3E"
+              alt="Digital Art & Gallery Platform UI Mockup" class="projectImage">
+            <div class="projectImageOverlay">
+              <span>Enterprise CMS</span>
+              <span>Production Project</span>
+              <span>Frontend Engineer</span>
+            </div>
+          </div>
           <div class="projectContent">
             <div class="projectMeta">
               <span class="projectCategory">Enterprise CMS</span>
@@ -2247,12 +2297,26 @@
 
             <div class="caseSection">
               <span class="caseLabel">My Role</span>
+              <p class="caseText role-summary">Frontend Engineer — Collaborated with UI/UX designers and backend
+                engineers</p>
               <div class="caseText">
                 <ul>
                   <li>Developed reusable frontend components with React</li>
                   <li>Converted Figma designs into responsive, pixel-perfect pages</li>
                   <li>Integrated REST APIs for dynamic content delivery</li>
                   <li>Improved cross-browser compatibility and fixed production UI issues</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="caseSection">
+              <span class="caseLabel">Challenges</span>
+              <div class="caseText">
+                <ul>
+                  <li>WordPress to React migration</li>
+                  <li>Maintaining pixel-perfect UI across devices</li>
+                  <li>Responsive redesign for complex layouts</li>
+                  <li>CMS integration with REST APIs</li>
                 </ul>
               </div>
             </div>
@@ -2273,6 +2337,18 @@
               <span class="highlightCheck"><i class="fas fa-check-circle"></i> Production Ready</span>
             </div>
 
+            <div class="caseSection">
+              <span class="caseLabel">Key Learnings</span>
+              <div class="caseText">
+                <ul>
+                  <li>Component architecture for large-scale applications</li>
+                  <li>REST API integration patterns</li>
+                  <li>Enterprise collaboration workflows</li>
+                  <li>Performance optimization techniques</li>
+                </ul>
+              </div>
+            </div>
+
             <div class="projectNda">
               <i class="fas fa-lock"></i>
               <div><span>Professional Project</span> — Covered under NDA. Details available during interview.</div>
@@ -2282,9 +2358,16 @@
 
         <!-- Case Study 2: Leave Management System -->
         <div class="projectCard">
-          <img
-            src="https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-            alt="Leave Management System" class="projectImage">
+          <div class="projectImageWrapper">
+            <img
+              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='200'%3E%3Crect width='600' height='200' fill='%2313193d'/%3E%3Ctext x='50%25' y='50%25' font-family='Inter, sans-serif' font-size='18' fill='%234fc3f7' text-anchor='middle' dy='.3em'%3EUI Mockup — Leave Management System%3C/text%3E%3C/svg%3E"
+              alt="Leave Management System UI Mockup" class="projectImage">
+            <div class="projectImageOverlay">
+              <span>Enterprise Application</span>
+              <span>Production Project</span>
+              <span>Frontend Engineer</span>
+            </div>
+          </div>
           <div class="projectContent">
             <div class="projectMeta">
               <span class="projectCategory">Enterprise Application</span>
@@ -2304,12 +2387,25 @@
 
             <div class="caseSection">
               <span class="caseLabel">My Role</span>
+              <p class="caseText role-summary">Frontend Engineer — Worked with backend engineers and product owners</p>
               <div class="caseText">
                 <ul>
                   <li>Built the frontend interface with React and TypeScript</li>
                   <li>Integrated REST APIs for leave request processing</li>
                   <li>Implemented calendar views and approval workflows</li>
                   <li>Ensured responsive design across all devices</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="caseSection">
+              <span class="caseLabel">Challenges</span>
+              <div class="caseText">
+                <ul>
+                  <li>Complex approval workflows with multiple roles</li>
+                  <li>Real-time notification system integration</li>
+                  <li>Calendar sync across time zones</li>
+                  <li>Performance with large employee datasets</li>
                 </ul>
               </div>
             </div>
@@ -2328,6 +2424,18 @@
               <span class="highlightCheck"><i class="fas fa-check-circle"></i> Approval Workflows</span>
             </div>
 
+            <div class="caseSection">
+              <span class="caseLabel">Key Learnings</span>
+              <div class="caseText">
+                <ul>
+                  <li>Complex state management in React</li>
+                  <li>Real-time data synchronization patterns</li>
+                  <li>Role-based UI rendering</li>
+                  <li>Testing enterprise applications</li>
+                </ul>
+              </div>
+            </div>
+
             <div class="projectNda">
               <i class="fas fa-lock"></i>
               <div><span>Professional Project</span> — Covered under NDA. Details available during interview.</div>
@@ -2337,9 +2445,16 @@
 
         <!-- Case Study 3: Interview Scheduling System -->
         <div class="projectCard">
-          <img
-            src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-            alt="Interview Scheduling System" class="projectImage">
+          <div class="projectImageWrapper">
+            <img
+              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='200'%3E%3Crect width='600' height='200' fill='%2313193d'/%3E%3Ctext x='50%25' y='50%25' font-family='Inter, sans-serif' font-size='18' fill='%234fc3f7' text-anchor='middle' dy='.3em'%3EUI Mockup — Interview Scheduling System%3C/text%3E%3C/svg%3E"
+              alt="Interview Scheduling System UI Mockup" class="projectImage">
+            <div class="projectImageOverlay">
+              <span>SaaS Platform</span>
+              <span>Production Project</span>
+              <span>Frontend Engineer</span>
+            </div>
+          </div>
           <div class="projectContent">
             <div class="projectMeta">
               <span class="projectCategory">SaaS Platform</span>
@@ -2359,12 +2474,26 @@
 
             <div class="caseSection">
               <span class="caseLabel">My Role</span>
+              <p class="caseText role-summary">Frontend Engineer — Collaborated with product team and backend engineers
+              </p>
               <div class="caseText">
                 <ul>
                   <li>Built the recruiter dashboard and candidate portal</li>
                   <li>Integrated calendar APIs for real-time availability sync</li>
                   <li>Implemented automated email notifications</li>
                   <li>Optimized performance for large-scale candidate data</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="caseSection">
+              <span class="caseLabel">Challenges</span>
+              <div class="caseText">
+                <ul>
+                  <li>Calendar API integration complexity</li>
+                  <li>Real-time availability conflict resolution</li>
+                  <li>Large-scale data rendering performance</li>
+                  <li>Multi-user collaboration features</li>
                 </ul>
               </div>
             </div>
@@ -2383,6 +2512,18 @@
               <span class="highlightCheck"><i class="fas fa-check-circle"></i> Recruiter Dashboard</span>
             </div>
 
+            <div class="caseSection">
+              <span class="caseLabel">Key Learnings</span>
+              <div class="caseText">
+                <ul>
+                  <li>Third-party API integration patterns</li>
+                  <li>Real-time collaboration features</li>
+                  <li>Large-scale data optimization</li>
+                  <li>User experience for complex workflows</li>
+                </ul>
+              </div>
+            </div>
+
             <div class="projectNda">
               <i class="fas fa-lock"></i>
               <div><span>Professional Project</span> — Covered under NDA. Details available during interview.</div>
@@ -2392,9 +2533,16 @@
 
         <!-- Case Study 4: Enterprise CMS Platform -->
         <div class="projectCard">
-          <img
-            src="https://images.unsplash.com/photo-1557838923-2985c318be48?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-            alt="Enterprise CMS Platform" class="projectImage">
+          <div class="projectImageWrapper">
+            <img
+              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='200'%3E%3Crect width='600' height='200' fill='%2313193d'/%3E%3Ctext x='50%25' y='50%25' font-family='Inter, sans-serif' font-size='18' fill='%234fc3f7' text-anchor='middle' dy='.3em'%3EUI Mockup — Enterprise CMS Platform%3C/text%3E%3C/svg%3E"
+              alt="Enterprise CMS Platform UI Mockup" class="projectImage">
+            <div class="projectImageOverlay">
+              <span>Content Management</span>
+              <span>Production Project</span>
+              <span>Frontend Engineer</span>
+            </div>
+          </div>
           <div class="projectContent">
             <div class="projectMeta">
               <span class="projectCategory">Content Management</span>
@@ -2414,12 +2562,26 @@
 
             <div class="caseSection">
               <span class="caseLabel">My Role</span>
+              <p class="caseText role-summary">Frontend Engineer — Worked with product designers and backend engineers
+              </p>
               <div class="caseText">
                 <ul>
                   <li>Built the admin interface with React and TypeScript</li>
                   <li>Designed reusable component architecture</li>
                   <li>Integrated REST APIs for content operations</li>
                   <li>Implemented drag-and-drop page builder</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="caseSection">
+              <span class="caseLabel">Challenges</span>
+              <div class="caseText">
+                <ul>
+                  <li>Complex content versioning system</li>
+                  <li>Multi-site content management</li>
+                  <li>Drag-and-drop interface performance</li>
+                  <li>Workflow approval processes</li>
                 </ul>
               </div>
             </div>
@@ -2438,6 +2600,18 @@
               <span class="highlightCheck"><i class="fas fa-check-circle"></i> Page Builder</span>
             </div>
 
+            <div class="caseSection">
+              <span class="caseLabel">Key Learnings</span>
+              <div class="caseText">
+                <ul>
+                  <li>Enterprise content modeling</li>
+                  <li>Drag-and-drop architecture</li>
+                  <li>Workflow implementation patterns</li>
+                  <li>Content versioning strategies</li>
+                </ul>
+              </div>
+            </div>
+
             <div class="projectNda">
               <i class="fas fa-lock"></i>
               <div><span>Professional Project</span> — Covered under NDA. Details available during interview.</div>
@@ -2447,9 +2621,16 @@
 
         <!-- Case Study 5: Cannes Brand Website -->
         <div class="projectCard">
-          <img
-            src="https://images.unsplash.com/photo-1533928298208-27ff66555d8d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-            alt="Cannes Brand Website" class="projectImage">
+          <div class="projectImageWrapper">
+            <img
+              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='200'%3E%3Crect width='600' height='200' fill='%2313193d'/%3E%3Ctext x='50%25' y='50%25' font-family='Inter, sans-serif' font-size='18' fill='%234fc3f7' text-anchor='middle' dy='.3em'%3EUI Mockup — Cannes Brand Website%3C/text%3E%3C/svg%3E"
+              alt="Cannes Brand Website UI Mockup" class="projectImage">
+            <div class="projectImageOverlay">
+              <span>Brand Website</span>
+              <span>Production Project</span>
+              <span>Frontend Engineer</span>
+            </div>
+          </div>
           <div class="projectContent">
             <div class="projectMeta">
               <span class="projectCategory">Brand Website</span>
@@ -2469,12 +2650,26 @@
 
             <div class="caseSection">
               <span class="caseLabel">My Role</span>
+              <p class="caseText role-summary">Frontend Engineer — Collaborated with UI/UX designers and creative team
+              </p>
               <div class="caseText">
                 <ul>
                   <li>Built the frontend with React and TypeScript</li>
                   <li>Implemented responsive design with Tailwind CSS</li>
                   <li>Integrated REST APIs for product data</li>
                   <li>Optimized performance for rich media content</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="caseSection">
+              <span class="caseLabel">Challenges</span>
+              <div class="caseText">
+                <ul>
+                  <li>Rich media performance optimization</li>
+                  <li>Interactive gallery implementation</li>
+                  <li>Brand consistency across devices</li>
+                  <li>Seamless shopping experience</li>
                 </ul>
               </div>
             </div>
@@ -2493,6 +2688,18 @@
               <span class="highlightCheck"><i class="fas fa-check-circle"></i> Performance Optimized</span>
             </div>
 
+            <div class="caseSection">
+              <span class="caseLabel">Key Learnings</span>
+              <div class="caseText">
+                <ul>
+                  <li>Media optimization techniques</li>
+                  <li>Interactive gallery patterns</li>
+                  <li>Brand-level design systems</li>
+                  <li>E-commerce UX patterns</li>
+                </ul>
+              </div>
+            </div>
+
             <div class="projectNda">
               <i class="fas fa-lock"></i>
               <div><span>Professional Project</span> — Covered under NDA. Details available during interview.</div>
@@ -2502,9 +2709,16 @@
 
         <!-- Case Study 6: Dragon Year Gallery -->
         <div class="projectCard">
-          <img
-            src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-            alt="Dragon Year Gallery" class="projectImage">
+          <div class="projectImageWrapper">
+            <img
+              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='200'%3E%3Crect width='600' height='200' fill='%2313193d'/%3E%3Ctext x='50%25' y='50%25' font-family='Inter, sans-serif' font-size='18' fill='%234fc3f7' text-anchor='middle' dy='.3em'%3EUI Mockup — Dragon Year Gallery%3C/text%3E%3C/svg%3E"
+              alt="Dragon Year Gallery UI Mockup" class="projectImage">
+            <div class="projectImageOverlay">
+              <span>Gallery</span>
+              <span>Production Project</span>
+              <span>Frontend Engineer</span>
+            </div>
+          </div>
           <div class="projectContent">
             <div class="projectMeta">
               <span class="projectCategory">Gallery</span>
@@ -2524,12 +2738,25 @@
 
             <div class="caseSection">
               <span class="caseLabel">My Role</span>
+              <p class="caseText role-summary">Frontend Engineer — Worked with gallery curators and backend team</p>
               <div class="caseText">
                 <ul>
                   <li>Built the gallery interface with React and TypeScript</li>
                   <li>Integrated REST APIs for art collection management</li>
                   <li>Implemented responsive grid and gallery layouts</li>
                   <li>Ensured cross-browser compatibility</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="caseSection">
+              <span class="caseLabel">Challenges</span>
+              <div class="caseText">
+                <ul>
+                  <li>Responsive grid for diverse art formats</li>
+                  <li>Artist profile management</li>
+                  <li>Virtual exhibition layouts</li>
+                  <li>Content management interface</li>
                 </ul>
               </div>
             </div>
@@ -2546,6 +2773,18 @@
               <span class="highlightCheck"><i class="fas fa-check-circle"></i> Artist Profiles</span>
               <span class="highlightCheck"><i class="fas fa-check-circle"></i> Virtual Exhibitions</span>
               <span class="highlightCheck"><i class="fas fa-check-circle"></i> Content Management</span>
+            </div>
+
+            <div class="caseSection">
+              <span class="caseLabel">Key Learnings</span>
+              <div class="caseText">
+                <ul>
+                  <li>Responsive grid architecture</li>
+                  <li>Content management UX</li>
+                  <li>Cross-browser compatibility</li>
+                  <li>Gallery-specific interaction patterns</li>
+                </ul>
+              </div>
             </div>
 
             <div class="projectNda">
