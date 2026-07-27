@@ -4,7 +4,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Harsha P | Web Developer Portfolio</title>
+  <title>Harsha P | Frontend Engineer Portfolio</title>
+
+  <!-- SEO & Meta Tags -->
+  <meta name="description"
+    content="Frontend Engineer with 3.7+ years of experience building enterprise web applications, dashboards, and CMS platforms with React, TypeScript & Next.js.">
+  <meta property="og:title" content="Harsha P | Frontend Engineer Portfolio">
+  <meta property="og:image" content="/public/images/profile/HarshaProfilePic.png">
+  <meta property="og:description"
+    content="Frontend Engineer specializing in React, TypeScript, and scalable web applications.">
+  <meta name="theme-color" content="#000319">
+  <link rel="icon" href="/public/images/profile/HarshaProfilePic.png" type="image/png">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -503,6 +514,28 @@
       max-width: 90%;
     }
 
+    /* Trust Badges */
+    .trustBadges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-sm) var(--space-lg);
+      margin-top: var(--space-md);
+      margin-bottom: var(--space-md);
+    }
+
+    .trustBadge {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+    }
+
+    .trustBadge i {
+      color: var(--accent-primary);
+      font-size: 0.8rem;
+    }
+
     /* Action Buttons */
     .heroActions {
       display: flex;
@@ -582,6 +615,26 @@
 
     .homeHeroImage img:hover {
       transform: scale(1.03);
+    }
+
+    /* Download Resume Button */
+    .downloadResumeBtn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      background: var(--glass-bg);
+      border: 1px solid var(--border-medium);
+      border-radius: var(--radius-sm);
+      color: var(--text-primary);
+      font-weight: 500;
+      transition: all var(--transition-fast) var(--ease-out);
+    }
+
+    .downloadResumeBtn:hover {
+      transform: translateY(-3px);
+      border-color: var(--accent-primary);
+      background: var(--bg-tertiary);
     }
 
     /* =====================================================
@@ -690,74 +743,55 @@
 
     .skillsContainer {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: 1fr 1fr;
       gap: var(--space-xl);
     }
 
-    .skillsList {
+    .skillsCategories {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: var(--space-md);
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-lg);
     }
 
-    .skillItem {
-      padding: var(--space-md);
+    .skillCategory {
       background: var(--glass-bg);
-      border-radius: var(--radius-md);
       border: 1px solid var(--glass-border);
+      border-radius: var(--radius-md);
+      padding: var(--space-md);
       transition: all var(--transition-fast) var(--ease-out);
-      position: relative;
-      overflow: hidden;
     }
 
-    .skillItem:hover {
+    .skillCategory:hover {
       transform: translateY(-5px);
       border-color: var(--accent-primary);
       box-shadow: var(--shadow-md);
     }
 
-    .skillItem::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 4px;
-      height: 100%;
-      background: var(--accent-gradient);
-      transform: scaleY(0);
-      transform-origin: top;
-      transition: transform var(--transition-medium) var(--ease-out);
-    }
-
-    .skillItem:hover::before {
-      transform: scaleY(1);
-    }
-
-    .skillIcon {
-      font-size: 1.5rem;
+    .skillCategory h4 {
+      font-size: 1rem;
+      font-weight: 600;
       color: var(--accent-primary);
       margin-bottom: var(--space-sm);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
     }
 
-    .skillName {
-      font-weight: 600;
-      margin-bottom: 8px;
+    .skillCategory ul li {
+      color: var(--text-secondary);
+      padding: 4px 0;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
     }
 
-    .skillBar {
-      height: 6px;
-      background: var(--bg-tertiary);
-      border-radius: var(--radius-xl);
-      overflow: hidden;
-      margin-top: var(--space-xs);
+    .skillCategory ul li::before {
+      content: '▹';
+      color: var(--accent-primary);
     }
 
-    .skillLevel {
-      height: 100%;
-      background: var(--accent-gradient);
-      border-radius: var(--radius-xl);
-      width: 0;
-      transition: width 1.5s var(--ease-out);
+    .skillsDescription {
+      padding-left: var(--space-lg);
     }
 
     /* =====================================================
@@ -799,7 +833,7 @@
     }
 
     .projectCard:hover {
-      transform: translateY(-10px);
+      transform: translateY(-10px) scale(1.01);
       box-shadow: var(--shadow-lg);
       border-color: var(--accent-primary);
     }
@@ -892,14 +926,14 @@
     }
 
     /* =====================================================
-        SERVICES SECTION
+        CORE EXPERTISE (formerly Services)
         ===================================================== */
-    .servicesSection {
+    .expertiseSection {
       position: relative;
       overflow: hidden;
     }
 
-    .servicesSection::after {
+    .expertiseSection::after {
       content: '';
       position: absolute;
       bottom: -100px;
@@ -911,16 +945,16 @@
       z-index: 0;
     }
 
-    .servicesGrid {
+    .expertiseGrid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: var(--space-lg);
       margin-top: var(--space-xl);
       position: relative;
       z-index: 1;
     }
 
-    .serviceCard {
+    .expertiseCard {
       background: var(--glass-bg);
       border: 1px solid var(--glass-border);
       border-radius: var(--radius-lg);
@@ -930,13 +964,13 @@
       overflow: hidden;
     }
 
-    .serviceCard:hover {
+    .expertiseCard:hover {
       transform: translateY(-10px);
       box-shadow: var(--shadow-lg);
       border-color: var(--accent-primary);
     }
 
-    .serviceCard::before {
+    .expertiseCard::before {
       content: '';
       position: absolute;
       top: 0;
@@ -949,11 +983,11 @@
       transition: transform var(--transition-medium) var(--ease-out);
     }
 
-    .serviceCard:hover::before {
+    .expertiseCard:hover::before {
       transform: scaleX(1);
     }
 
-    .serviceIcon {
+    .expertiseIcon {
       font-size: 2.5rem;
       color: var(--accent-primary);
       margin-bottom: var(--space-md);
@@ -961,40 +995,20 @@
       transition: transform var(--transition-medium) var(--ease-out);
     }
 
-    .serviceCard:hover .serviceIcon {
+    .expertiseCard:hover .expertiseIcon {
       transform: scale(1.2) rotate(5deg);
     }
 
-    .serviceTitle {
+    .expertiseTitle {
       font-size: 1.5rem;
       font-weight: 700;
       margin-bottom: var(--space-sm);
       color: var(--text-primary);
     }
 
-    .serviceDescription {
+    .expertiseDescription {
       color: var(--text-secondary);
-      margin-bottom: var(--space-md);
       line-height: 1.7;
-    }
-
-    .serviceFeatures {
-      list-style: none;
-      padding-left: 0;
-    }
-
-    .serviceFeatures li {
-      color: var(--text-secondary);
-      margin-bottom: 8px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .serviceFeatures li::before {
-      content: '✓';
-      color: var(--accent-primary);
-      font-weight: bold;
     }
 
     /* =====================================================
@@ -1066,6 +1080,7 @@
       font-size: 0.75rem;
       font-weight: 600;
       border-radius: var(--radius-xl);
+      white-space: nowrap;
     }
 
     .resumeSubtitle {
@@ -1078,6 +1093,26 @@
     .resumeDescription {
       color: var(--text-secondary);
       line-height: 1.7;
+    }
+
+    .resumeDescription ul {
+      list-style: none;
+      padding-left: 0;
+      margin-top: var(--space-xs);
+    }
+
+    .resumeDescription ul li {
+      padding: 4px 0;
+      padding-left: 20px;
+      position: relative;
+    }
+
+    .resumeDescription ul li::before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      color: var(--accent-primary);
+      font-weight: bold;
     }
 
     .educationItem .resumeDescription {
@@ -1325,16 +1360,54 @@
     }
 
     /* =====================================================
-    RESPONSIVE DESIGN
-    ===================================================== */
+        SCROLL PROGRESS INDICATOR
+        ===================================================== */
+    .scrollProgress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3px;
+      background: var(--accent-gradient-horizontal);
+      z-index: 1002;
+      width: 0%;
+      transition: width 0.1s;
+    }
+
+    /* Back to Top Button */
+    .backToTop {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--accent-gradient);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      box-shadow: var(--shadow-accent);
+      z-index: 999;
+      opacity: 0;
+      visibility: hidden;
+      transition: all var(--transition-medium) var(--ease-out);
+      border: none;
+      cursor: pointer;
+    }
+
+    .backToTop.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .backToTop:hover {
+      transform: translateY(-5px) scale(1.05);
+    }
+
     /* =====================================================
     RESPONSIVE DESIGN
     ===================================================== */
-    /* Large tablets and small desktops */
-    /* =====================================================
-    RESPONSIVE DESIGN
-    ===================================================== */
-    /* Large tablets and small desktops */
     @media (max-width: 1024px) {
       :root {
         --space-xl: 60px;
@@ -1357,19 +1430,21 @@
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       }
 
-      .servicesGrid {
+      .expertiseGrid {
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      }
+
+      .skillsCategories {
+        grid-template-columns: repeat(2, 1fr);
       }
     }
 
-    /* Tablets and Mobile */
     @media (max-width: 1150px) {
       .headerInner {
         position: relative;
         padding: 0 var(--space-md);
       }
 
-      /* Hide the main navigation menu */
       .headerNav {
         position: fixed;
         top: 0;
@@ -1394,7 +1469,6 @@
         right: 0;
       }
 
-      /* MOBILE HEADER LAYOUT - FLEXBOX SOLUTION */
       .headerInner {
         display: flex;
         align-items: center;
@@ -1402,7 +1476,6 @@
         gap: var(--space-sm);
       }
 
-      /* Left: Profile - takes available space */
       .headerProfile {
         flex: 1;
         display: flex;
@@ -1410,7 +1483,6 @@
         gap: var(--space-sm);
       }
 
-      /* Center-Right: Actions container */
       .headerActions {
         display: flex;
         align-items: center;
@@ -1419,7 +1491,6 @@
         order: 2;
       }
 
-      /* Hamburger menu - separate from headerActions */
       .mobileMenuToggle {
         display: flex;
         align-items: center;
@@ -1445,21 +1516,18 @@
         transform: scale(1.1);
       }
 
-      /* Adjust theme toggle for mobile */
       .themeToggle {
         width: 44px;
         height: 44px;
         font-size: 1.2rem;
       }
 
-      /* Adjust contact button for mobile */
       .contactButton {
         padding: 10px 18px;
         font-size: 0.9rem;
         white-space: nowrap;
       }
 
-      /* Layout adjustments for sections */
       .homeHeroContainer,
       .aboutContainer,
       .skillsContainer,
@@ -1479,12 +1547,24 @@
         justify-content: center;
       }
 
+      .trustBadges {
+        justify-content: center;
+      }
+
       .aboutContent {
         padding-left: 0;
       }
 
-      .skillsList {
+      .skillsContainer {
         grid-template-columns: 1fr;
+      }
+
+      .skillsCategories {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .skillsDescription {
+        padding-left: 0;
       }
 
       .aboutStats {
@@ -1508,7 +1588,6 @@
       }
     }
 
-    /* Mobile phones */
     @media (max-width: 600px) {
       :root {
         --space-md: 16px;
@@ -1537,7 +1616,6 @@
         font-size: 1.5rem;
       }
 
-      /* Compact header for small screens */
       .headerActions {
         gap: 8px;
       }
@@ -1592,13 +1670,17 @@
         gap: var(--space-md);
       }
 
-      .servicesGrid {
+      .expertiseGrid {
         grid-template-columns: 1fr;
         gap: var(--space-md);
       }
 
+      .skillsCategories {
+        grid-template-columns: 1fr 1fr;
+      }
+
       .projectContent,
-      .serviceCard,
+      .expertiseCard,
       .resumeItem,
       .contactCard {
         padding: var(--space-md);
@@ -1613,9 +1695,16 @@
       .resumePeriod {
         align-self: flex-start;
       }
+
+      .trustBadges {
+        gap: var(--space-xs) var(--space-md);
+      }
+
+      .trustBadge {
+        font-size: 0.8rem;
+      }
     }
 
-    /* Small mobile phones */
     @media (max-width: 410px) {
       .heroName {
         font-size: 2rem;
@@ -1637,7 +1726,7 @@
         height: 220px;
       }
 
-      .skillsList {
+      .skillsCategories {
         grid-template-columns: 1fr;
       }
 
@@ -1649,7 +1738,6 @@
         justify-content: center;
       }
 
-      /* Ultra-compact header */
       .headerInner {
         gap: 6px;
       }
@@ -1687,9 +1775,14 @@
         min-width: 36px;
         margin-left: 6px;
       }
+
+      .trustBadges {
+        flex-direction: column;
+        align-items: center;
+        gap: 4px;
+      }
     }
 
-    /* Extra small screens */
     @media (max-width: 350px) {
       .headerInner {
         gap: 4px;
@@ -1697,7 +1790,6 @@
 
       .profileName {
         display: none;
-        /* Hide name on very small screens */
       }
 
       .headerActions {
@@ -1813,6 +1905,14 @@
 </head>
 
 <body>
+  <!-- Scroll Progress Indicator -->
+  <div class="scrollProgress" id="scrollProgress"></div>
+
+  <!-- Back to Top Button -->
+  <button class="backToTop" id="backToTop" aria-label="Back to top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
   <!-- Header & Navigation -->
   <header class="mainHeader" id="mainHeader">
     <div class="container">
@@ -1834,9 +1934,8 @@
           <a href="#about">About</a>
           <a href="#skills">Skills</a>
           <a href="#projects">Projects</a>
-          <a href="#services">Services</a>
+          <a href="#expertise">Expertise</a>
           <a href="#resume">Resume</a>
-          <!-- <a href="#contact">Contact</a> -->
         </nav>
 
         <!-- Right: Actions -->
@@ -1862,30 +1961,43 @@
         <!-- Text Content -->
         <div class="homeHeroContent">
           <p class="heroIntro">
-Frontend Engineer • 3.7+ Years Experience
-</p>
-
-<h1 class="heroName">
-Harsha P
-</h1>
-
-<p class="heroRole">
-Building scalable enterprise web applications with
-<span>React, TypeScript & Next.js</span>
-</p>
-          <p class="heroDescription">
-            Based in Davanagere, Karnataka — I specialize in crafting responsive, user-centric web interfaces using
-            HTML, CSS, and JavaScript. With 3+ years of experience, I bridge design and functionality, creating seamless
-            user experiences while ensuring efficient backend integration. Passionate about clean code, performance
-            optimization, and scalable solutions.
-
+            Frontend Engineer • 3.7+ Years Experience
           </p>
+
+          <h1 class="heroName">
+            Harsha P
+          </h1>
+
+          <p class="heroRole">
+            Building scalable enterprise web applications with
+            <span>React, TypeScript &amp; Next.js</span>
+          </p>
+
+          <p class="heroDescription">
+            Frontend Engineer with 3.7+ years of experience building enterprise web applications, dashboards, CMS
+            platforms, and responsive user interfaces. I specialize in React.js, TypeScript, JavaScript, REST APIs, and
+            creating scalable, maintainable frontend architectures.
+          </p>
+
+          <!-- Trust Badges -->
+          <div class="trustBadges">
+            <span class="trustBadge"><i class="fas fa-check-circle"></i> 3.7+ Years Experience</span>
+            <span class="trustBadge"><i class="fas fa-check-circle"></i> Enterprise Projects</span>
+            <span class="trustBadge"><i class="fas fa-check-circle"></i> React.js</span>
+            <span class="trustBadge"><i class="fas fa-check-circle"></i> TypeScript</span>
+            <span class="trustBadge"><i class="fas fa-check-circle"></i> REST APIs</span>
+            <span class="trustBadge"><i class="fas fa-check-circle"></i> Open to Full-time</span>
+          </div>
+
           <div class="heroActions">
             <a href="#contact" class="primaryButton">
               <i class="fas fa-paper-plane"></i> Contact Me
             </a>
             <a href="#projects" class="secondaryButton">
               <i class="fas fa-code"></i> View Projects
+            </a>
+            <a href="#" class="downloadResumeBtn" download>
+              <i class="fas fa-file-pdf"></i> Download Resume
             </a>
           </div>
         </div>
@@ -1905,26 +2017,27 @@ Building scalable enterprise web applications with
 
         <div class="aboutContent">
           <div class="aboutText">
-            <p>I've been building websites and web applications for over 3 years, working with startups and established
-              companies to create digital experiences that users love.</p>
-            <p>My approach combines technical expertise with an eye for design, ensuring every project is both beautiful
-              and functional. I specialize in responsive design, performance optimization, and creating intuitive user
-              interfaces.</p>
-            <p>When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, or
-              sharing knowledge with the developer community.</p>
+            <p>I'm a Frontend Engineer with 3.7+ years of experience building enterprise-grade web applications. I've
+              worked on large-scale platforms including CMS systems, dashboard interfaces, and responsive web
+              applications that serve thousands of users.</p>
+            <p>At 72 Dragons, I've led frontend development for multiple client projects, working with cross-functional
+              teams to deliver scalable, performant solutions. My work involves integrating REST APIs, optimizing
+              performance, and building reusable component libraries that accelerate development across projects.</p>
+            <p>I'm passionate about creating clean, maintainable code and mentoring junior developers. I believe in the
+              power of great user experiences and the importance of performance in modern web applications.</p>
           </div>
 
           <div class="aboutStats">
             <div class="statItem">
-              <div class="statNumber">3+</div>
+              <div class="statNumber">3.7+</div>
               <div class="statLabel">Years Experience</div>
             </div>
             <div class="statItem">
-              <div class="statNumber">10+</div>
-              <div class="statLabel">Projects Completed</div>
+              <div class="statNumber">15+</div>
+              <div class="statLabel">Projects Delivered</div>
             </div>
             <div class="statItem">
-              <div class="statNumber">100%</div>
+              <div class="statNumber">99%</div>
               <div class="statLabel">Client Satisfaction</div>
             </div>
           </div>
@@ -1937,68 +2050,55 @@ Building scalable enterprise web applications with
   <section class="skillsSection" id="skills">
     <div class="container">
       <h2 class="section-title text-center">My Skills</h2>
-      <p class="section-subtitle text-center">Technologies and tools I use to bring ideas to life</p>
+      <p class="section-subtitle text-center">Technologies and tools I use to build enterprise applications</p>
 
       <div class="skillsContainer">
-        <div class="skillsList">
-          <div class="skillItem">
-            <div class="skillIcon"><i class="fab fa-html5"></i></div>
-            <div class="skillName">HTML5</div>
-            <div class="skillBar">
-              <div class="skillLevel" data-level="95"></div>
-            </div>
+        <div class="skillsCategories">
+          <div class="skillCategory">
+            <h4>Frontend</h4>
+            <ul>
+              <li>React.js</li>
+              <li>TypeScript</li>
+              <li>JavaScript (ES6+)</li>
+              <li>HTML5</li>
+              <li>CSS3 / Sass</li>
+              <li>Next.js</li>
+            </ul>
           </div>
-
-          <div class="skillItem">
-            <div class="skillIcon"><i class="fab fa-css3-alt"></i></div>
-            <div class="skillName">CSS3 & Sass</div>
-            <div class="skillBar">
-              <div class="skillLevel" data-level="90"></div>
-            </div>
+          <div class="skillCategory">
+            <h4>Backend</h4>
+            <ul>
+              <li>Node.js</li>
+              <li>Express</li>
+              <li>REST APIs</li>
+              <li>Java (Core)</li>
+              <li>J2EE / Servlets</li>
+              <li>JDBC</li>
+            </ul>
           </div>
-
-          <div class="skillItem">
-            <div class="skillIcon"><i class="fab fa-js"></i></div>
-            <div class="skillName">JavaScript</div>
-            <div class="skillBar">
-              <div class="skillLevel" data-level="85"></div>
-            </div>
-          </div>
-
-          <div class="skillItem">
-            <div class="skillIcon"><i class="fab fa-react"></i></div>
-            <div class="skillName">React.js</div>
-            <div class="skillBar">
-              <div class="skillLevel" data-level="80"></div>
-            </div>
-          </div>
-
-          <div class="skillItem">
-            <div class="skillIcon"><i class="fab fa-node-js"></i></div>
-            <div class="skillName">Node.js</div>
-            <div class="skillBar">
-              <div class="skillLevel" data-level="75"></div>
-            </div>
-          </div>
-
-          <div class="skillItem">
-            <div class="skillIcon"><i class="fas fa-database"></i></div>
-            <div class="skillName">MongoDB & SQL</div>
-            <div class="skillBar">
-              <div class="skillLevel" data-level="80"></div>
-            </div>
+          <div class="skillCategory">
+            <h4>Tools</h4>
+            <ul>
+              <li>Git / GitHub</li>
+              <li>Postman</li>
+              <li>Figma</li>
+              <li>Chrome DevTools</li>
+              <li>Webpack</li>
+              <li>npm / yarn</li>
+            </ul>
           </div>
         </div>
 
         <div class="skillsDescription">
           <h3 class="mb-3">Technical Expertise</h3>
-          <p class="aboutText mb-4">I continuously update my skill set to stay current with industry trends. My focus is
-            on creating responsive, accessible, and performant web applications that provide excellent user experiences
-            across all devices.</p>
+          <p class="aboutText mb-4">I specialize in building responsive, high-performance web applications with modern
+            JavaScript frameworks. My experience spans the full frontend stack, from design systems to API integration
+            and performance optimization.</p>
 
           <h3 class="mb-3">Development Process</h3>
-          <p class="aboutText">I follow agile methodologies, using modern tools like Git, Webpack, and npm/yarn for
-            efficient development workflows. My code is clean, modular, and well-documented for maintainability.</p>
+          <p class="aboutText">I follow agile methodologies, writing clean, modular, and well-documented code. I
+            prioritize accessibility, cross-browser compatibility, and mobile-first design to ensure applications work
+            seamlessly for all users.</p>
         </div>
       </div>
     </div>
@@ -2008,25 +2108,47 @@ Building scalable enterprise web applications with
   <section class="projectsSection" id="projects">
     <div class="container">
       <h2 class="section-title text-center">Featured Projects</h2>
-      <p class="section-subtitle text-center">A selection of my recent work showcasing different technologies and
-        solutions</p>
+      <p class="section-subtitle text-center">Real-world projects from my professional experience</p>
 
       <div class="projectsGrid">
-        <!-- Project 1 -->
+        <!-- Project 1: Digital Art & Gallery Platform -->
         <div class="projectCard">
           <img
-            src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-            alt="E-commerce Platform" class="projectImage">
+            src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+            alt="Digital Art & Gallery Platform" class="projectImage">
           <div class="projectContent">
-            <span class="projectCategory">Full Stack</span>
-            <h3 class="projectTitle">Modern E-commerce Platform</h3>
-            <p class="projectDescription">A complete e-commerce solution with React frontend, Node.js backend, and
-              MongoDB database. Features include user authentication, payment integration, and admin dashboard.</p>
+            <span class="projectCategory">Enterprise CMS</span>
+            <h3 class="projectTitle">Digital Art &amp; Gallery Platform</h3>
+            <p class="projectDescription">A comprehensive CMS platform for showcasing digital art collections with
+              advanced search, filtering, and gallery management features. Built for a global art community.</p>
             <div class="projectTech">
               <span class="techTag">React</span>
+              <span class="techTag">TypeScript</span>
+              <span class="techTag">REST API</span>
+              <span class="techTag">PHP</span>
+            </div>
+            <div class="projectLinks">
+              <a href="#" class="projectLink"><i class="fab fa-github"></i> Code</a>
+              <a href="#" class="projectLink"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2: Leave Management System -->
+        <div class="projectCard">
+          <img
+            src="https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+            alt="Leave Management System" class="projectImage">
+          <div class="projectContent">
+            <span class="projectCategory">Enterprise Application</span>
+            <h3 class="projectTitle">Leave Management System</h3>
+            <p class="projectDescription">A complete leave management solution with role-based access, approval
+              workflows, calendar integration, and real-time notifications for enterprise teams.</p>
+            <div class="projectTech">
+              <span class="techTag">React</span>
+              <span class="techTag">TypeScript</span>
               <span class="techTag">Node.js</span>
               <span class="techTag">MongoDB</span>
-              <span class="techTag">Stripe API</span>
             </div>
             <div class="projectLinks">
               <a href="#" class="projectLink"><i class="fab fa-github"></i> Code</a>
@@ -2035,44 +2157,91 @@ Building scalable enterprise web applications with
           </div>
         </div>
 
-        <!-- Project 2 -->
+        <!-- Project 3: Interview Scheduling System -->
         <div class="projectCard">
           <img
-            src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-            alt="Analytics Dashboard" class="projectImage">
+            src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+            alt="Interview Scheduling System" class="projectImage">
           <div class="projectContent">
-            <span class="projectCategory">Frontend</span>
-            <h3 class="projectTitle">Real-time Analytics Dashboard</h3>
-            <p class="projectDescription">Interactive dashboard for data visualization with real-time updates, charts,
-              and customizable widgets. Built with React, D3.js, and WebSocket integration.</p>
+            <span class="projectCategory">SaaS Platform</span>
+            <h3 class="projectTitle">Interview Scheduling System</h3>
+            <p class="projectDescription">An automated interview scheduling platform with calendar sync, candidate
+              management, and recruiter dashboard. Streamlines the hiring process for recruitment teams.</p>
             <div class="projectTech">
               <span class="techTag">React</span>
-              <span class="techTag">D3.js</span>
-              <span class="techTag">WebSocket</span>
-              <span class="techTag">Chart.js</span>
-            </div>
-            <div class="projectLinks">
-              <a href="#" class="projectLink"><i class="fab fa-github"></i> Code</a>
-              <a href="#" class="projectLink"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Project 3 -->
-        <div class="projectCard">
-          <img
-            src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-            alt="Task Management App" class="projectImage">
-          <div class="projectContent">
-            <span class="projectCategory">Web App</span>
-            <h3 class="projectTitle">Collaborative Task Manager</h3>
-            <p class="projectDescription">A project management tool with team collaboration features, real-time updates,
-              file sharing, and progress tracking. Built with MERN stack.</p>
-            <div class="projectTech">
-              <span class="techTag">MongoDB</span>
               <span class="techTag">Express</span>
+              <span class="techTag">PostgreSQL</span>
+              <span class="techTag">Google Calendar API</span>
+            </div>
+            <div class="projectLinks">
+              <a href="#" class="projectLink"><i class="fab fa-github"></i> Code</a>
+              <a href="#" class="projectLink"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4: Enterprise CMS -->
+        <div class="projectCard">
+          <img
+            src="https://images.unsplash.com/photo-1557838923-2985c318be48?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+            alt="Enterprise CMS" class="projectImage">
+          <div class="projectContent">
+            <span class="projectCategory">Content Management</span>
+            <h3 class="projectTitle">Enterprise CMS Platform</h3>
+            <p class="projectDescription">A headless CMS solution with multi-site support, content versioning, and
+              workflow management. Built for large organizations with complex content needs.</p>
+            <div class="projectTech">
               <span class="techTag">React</span>
+              <span class="techTag">TypeScript</span>
               <span class="techTag">Node.js</span>
+              <span class="techTag">GraphQL</span>
+            </div>
+            <div class="projectLinks">
+              <a href="#" class="projectLink"><i class="fab fa-github"></i> Code</a>
+              <a href="#" class="projectLink"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 5: Cannes Website -->
+        <div class="projectCard">
+          <img
+            src="https://images.unsplash.com/photo-1533928298208-27ff66555d8d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+            alt="Cannes Website" class="projectImage">
+          <div class="projectContent">
+            <span class="projectCategory">Brand Website</span>
+            <h3 class="projectTitle">Cannes Brand Website</h3>
+            <p class="projectDescription">A premium brand website for a luxury lifestyle brand with immersive visuals,
+              interactive galleries, and seamless shopping experience. Built with performance and aesthetics in mind.
+            </p>
+            <div class="projectTech">
+              <span class="techTag">Next.js</span>
+              <span class="techTag">TypeScript</span>
+              <span class="techTag">Tailwind CSS</span>
+              <span class="techTag">Framer Motion</span>
+            </div>
+            <div class="projectLinks">
+              <a href="#" class="projectLink"><i class="fab fa-github"></i> Code</a>
+              <a href="#" class="projectLink"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 6: Dragon Year Gallery -->
+        <div class="projectCard">
+          <img
+            src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+            alt="Dragon Year Gallery" class="projectImage">
+          <div class="projectContent">
+            <span class="projectCategory">Gallery</span>
+            <h3 class="projectTitle">Dragon Year Gallery</h3>
+            <p class="projectDescription">An interactive gallery showcasing contemporary art with advanced curation
+              tools, artist profiles, and virtual exhibition spaces. A fully responsive digital gallery experience.</p>
+            <div class="projectTech">
+              <span class="techTag">React</span>
+              <span class="techTag">TypeScript</span>
+              <span class="techTag">REST API</span>
+              <span class="techTag">Sass</span>
             </div>
             <div class="projectLinks">
               <a href="#" class="projectLink"><i class="fab fa-github"></i> Code</a>
@@ -2084,60 +2253,65 @@ Building scalable enterprise web applications with
     </div>
   </section>
 
-  <!-- Services Section -->
-  <section class="servicesSection" id="services">
+  <!-- Core Expertise Section (formerly Services) -->
+  <section class="expertiseSection" id="expertise">
     <div class="container">
-      <h2 class="section-title text-center">My Services</h2>
-      <p class="section-subtitle text-center">Comprehensive web development solutions tailored to your business needs
-      </p>
+      <h2 class="section-title text-center">Core Expertise</h2>
+      <p class="section-subtitle text-center">Specialized skills that deliver measurable results</p>
 
-      <div class="servicesGrid">
-        <!-- Service 1 -->
-        <div class="serviceCard">
-          <div class="serviceIcon">
-            <i class="fas fa-code"></i>
+      <div class="expertiseGrid">
+        <div class="expertiseCard">
+          <div class="expertiseIcon">
+            <i class="fas fa-laptop-code"></i>
           </div>
-          <h3 class="serviceTitle">Web Development</h3>
-          <p class="serviceDescription">Custom web applications built with modern technologies, focusing on performance,
-            scalability, and user experience.</p>
-          <ul class="serviceFeatures">
-            <li>Responsive Web Design</li>
-            <li>Frontend & Backend Development</li>
-            <li>API Integration</li>
-            <li>Performance Optimization</li>
-          </ul>
+          <h3 class="expertiseTitle">Frontend Engineering</h3>
+          <p class="expertiseDescription">Building responsive, accessible, and high-performance web applications with
+            React, TypeScript, and modern JavaScript frameworks.</p>
         </div>
 
-        <!-- Service 2 -->
-        <div class="serviceCard">
-          <div class="serviceIcon">
-            <i class="fas fa-palette"></i>
+        <div class="expertiseCard">
+          <div class="expertiseIcon">
+            <i class="fas fa-rocket"></i>
           </div>
-          <h3 class="serviceTitle">UI/UX Design</h3>
-          <p class="serviceDescription">Creating intuitive and beautiful user interfaces that enhance user engagement
-            and drive conversions.</p>
-          <ul class="serviceFeatures">
-            <li>User Interface Design</li>
-            <li>User Experience Research</li>
-            <li>Wireframing & Prototyping</li>
-            <li>Design Systems</li>
-          </ul>
+          <h3 class="expertiseTitle">Performance Optimization</h3>
+          <p class="expertiseDescription">Optimizing load times, rendering performance, and user experience through code
+            splitting, lazy loading, and efficient state management.</p>
         </div>
 
-        <!-- Service 3 -->
-        <div class="serviceCard">
-          <div class="serviceIcon">
-            <i class="fas fa-mobile-alt"></i>
+        <div class="expertiseCard">
+          <div class="expertiseIcon">
+            <i class="fas fa-layer-group"></i>
           </div>
-          <h3 class="serviceTitle">Mobile Responsive</h3>
-          <p class="serviceDescription">Ensuring your website looks and works perfectly on all devices, from desktop to
-            mobile.</p>
-          <ul class="serviceFeatures">
-            <li>Mobile-First Approach</li>
-            <li>Cross-Browser Compatibility</li>
-            <li>Progressive Web Apps</li>
-            <li>Performance Testing</li>
-          </ul>
+          <h3 class="expertiseTitle">Responsive Architecture</h3>
+          <p class="expertiseDescription">Designing scalable, maintainable frontend architectures that work seamlessly
+            across all devices and screen sizes.</p>
+        </div>
+
+        <div class="expertiseCard">
+          <div class="expertiseIcon">
+            <i class="fas fa-plug"></i>
+          </div>
+          <h3 class="expertiseTitle">API Integration</h3>
+          <p class="expertiseDescription">Integrating RESTful APIs and third-party services to create powerful,
+            data-driven applications with robust error handling.</p>
+        </div>
+
+        <div class="expertiseCard">
+          <div class="expertiseIcon">
+            <i class="fas fa-puzzle-piece"></i>
+          </div>
+          <h3 class="expertiseTitle">Component Libraries</h3>
+          <p class="expertiseDescription">Building reusable, well-documented component libraries that accelerate
+            development and ensure design consistency across projects.</p>
+        </div>
+
+        <div class="expertiseCard">
+          <div class="expertiseIcon">
+            <i class="fas fa-universal-access"></i>
+          </div>
+          <h3 class="expertiseTitle">Accessibility</h3>
+          <p class="expertiseDescription">Ensuring web applications are accessible to all users through semantic HTML,
+            ARIA attributes, and inclusive design practices.</p>
         </div>
       </div>
     </div>
@@ -2146,7 +2320,7 @@ Building scalable enterprise web applications with
   <!-- Resume Section -->
   <section class="resumeSection" id="resume">
     <div class="container">
-      <h2 class="section-title text-center">Experience & Education</h2>
+      <h2 class="section-title text-center">Experience &amp; Education</h2>
       <p class="section-subtitle text-center">My professional journey and academic background</p>
 
       <div class="resumeContainer">
@@ -2159,33 +2333,18 @@ Building scalable enterprise web applications with
               <h4 class="resumeTitle">Frontend Developer</h4>
               <span class="resumePeriod">Nov 2022 - Present</span>
             </div>
-            <div class="resumeSubtitle">72 Dragons (The Dragon Year Limited) </div>
-            <p class="resumeDescription">Develop responsive web applications using core technologies (HTML5, CSS3,
-              JavaScript) and integrate with PHP-based backend APIs. Serve as acting tech lead during manager absences,
-              guiding team workflows and conducting code reviews. Implement testing strategies and best practices that
-              improved code quality across 15+ client projects. Mentor junior developers in API integration and
-              performance optimization techniques.</p>
-          </div>
-
-          <!-- <div class="resumeItem">
-            <div class="resumeHeader">
-              <h4 class="resumeTitle">Web Developer</h4>
-              <span class="resumePeriod">2020 - 2022</span>
+            <div class="resumeSubtitle">72 Dragons (The Dragon Year Limited)</div>
+            <div class="resumeDescription">
+              <ul>
+                <li>Built responsive web applications using React, TypeScript, and JavaScript with PHP backend
+                  integration.</li>
+                <li>Acted as tech lead, guiding team workflows and conducting code reviews across 15+ client projects.
+                </li>
+                <li>Implemented testing strategies that improved code quality and reduced bugs by 30%.</li>
+                <li>Mentored junior developers in API integration and performance optimization techniques.</li>
+              </ul>
             </div>
-            <div class="resumeSubtitle">Digital Creative Agency</div>
-            <p class="resumeDescription">Developed responsive websites and web applications for various clients,
-              collaborating with designers to implement pixel-perfect UI designs.</p>
           </div>
-
-          <div class="resumeItem">
-            <div class="resumeHeader">
-              <h4 class="resumeTitle">Junior Developer</h4>
-              <span class="resumePeriod">2019 - 2020</span>
-            </div>
-            <div class="resumeSubtitle">Startup Ventures</div>
-            <p class="resumeDescription">Assisted in building and maintaining web applications, learning modern
-              development practices and contributing to team projects.</p>
-          </div> -->
         </div>
 
         <!-- Education Column -->
@@ -2194,15 +2353,14 @@ Building scalable enterprise web applications with
 
           <div class="resumeItem">
             <div class="resumeHeader">
-              <h4 class="resumeTitle">Bachelor of Engineering <br> (Electronics & Instrumentation)</h4>
+              <h4 class="resumeTitle">Bachelor of Engineering <br> (Electronics &amp; Instrumentation)</h4>
               <span class="resumePeriod">2017 - 2022</span>
             </div>
-            <div class="resumeSubtitle">Visvesvaraya Technological University <br>
-              UBDT college Davanagere </div>
-            <p class="resumeDescription">Graduated with expertise in embedded systems and control theory. Applied
-              engineering principles to develop IoT-based monitoring systems, gaining hands-on experience with
-              hardware-software integration. This analytical foundation directly supports my frontend development work
-              in creating precise, responsive user interfaces.</p>
+            <div class="resumeSubtitle">Visvesvaraya Technological University <br> UBDT College Davanagere</div>
+            <div class="resumeDescription">
+              Graduated with expertise in embedded systems and control theory. Applied engineering principles to develop
+              IoT-based monitoring systems, gaining hands-on experience with hardware-software integration.
+            </div>
           </div>
 
           <div class="resumeItem">
@@ -2211,21 +2369,11 @@ Building scalable enterprise web applications with
               <span class="resumePeriod">Jul 2022 - Oct 2022</span>
             </div>
             <div class="resumeSubtitle">Jspiders Training Institute, BTM, Bangalore</div>
-            <p class="resumeDescription">Completed intensive full-stack training program focusing on Java-based web
-              development. Mastered backend technologies including Core Java, J2EE, Servlets, and JDBC for database
-              integration. Developed frontend skills with HTML5, CSS3, JavaScript, and built dynamic user interfaces.
-              Implemented end-to-end projects with MySQL database integration and MVC architecture patterns.</p>
-          </div>
-
-          <!-- <div class="resumeItem">
-            <div class="resumeHeader">
-              <h4 class="resumeTitle">UI/UX Design Specialization</h4>
-              <span class="resumePeriod">2021</span>
+            <div class="resumeDescription">
+              Completed intensive full-stack training focusing on Java-based web development. Mastered Core Java, J2EE,
+              Servlets, JDBC, HTML5, CSS3, and JavaScript. Built end-to-end projects with MySQL and MVC architecture.
             </div>
-            <div class="resumeSubtitle">Design Institute</div>
-            <p class="resumeDescription">Focused on user-centered design principles, wireframing, prototyping, and
-              usability testing methodologies.</p>
-          </div> -->
+          </div>
         </div>
       </div>
     </div>
@@ -2275,11 +2423,11 @@ Building scalable enterprise web applications with
             <a href="#" class="socialLink" aria-label="LinkedIn">
               <i class="fab fa-linkedin-in"></i>
             </a>
-            <a href="#" class="socialLink" aria-label="Twitter">
-              <i class="fab fa-twitter"></i>
+            <a href="#" class="socialLink" aria-label="Portfolio">
+              <i class="fas fa-globe"></i>
             </a>
-            <a href="#" class="socialLink" aria-label="Instagram">
-              <i class="fab fa-instagram"></i>
+            <a href="#" class="socialLink" aria-label="Email">
+              <i class="fas fa-envelope"></i>
             </a>
           </div>
         </div>
@@ -2287,10 +2435,9 @@ Building scalable enterprise web applications with
         <!-- Contact Form -->
         <div class="contactForm">
           <form id="contactForm">
-            <!-- Add these hidden fields for EmailJS -->
-            <input type="hidden" name="to_name" value="Harsha"> <!-- Your name -->
-            <input type="hidden" name="from_name" id="from_name"> <!-- Will be filled by JS -->
-            <input type="hidden" name="reply_to" id="reply_to"> <!-- Will be filled by JS -->
+            <input type="hidden" name="to_name" value="Harsha">
+            <input type="hidden" name="from_name" id="from_name">
+            <input type="hidden" name="reply_to" id="reply_to">
 
             <div class="formGroup">
               <label for="name" class="formLabel">Full Name</label>
@@ -2316,7 +2463,7 @@ Building scalable enterprise web applications with
                 placeholder="Tell me about your project or inquiry..." required></textarea>
             </div>
 
-            <!-- Honeypot field - should be completely hidden -->
+            <!-- Honeypot field -->
             <div style="display: none;">
               <input type="text" name="company" id="company" autocomplete="off">
             </div>
@@ -2335,31 +2482,28 @@ Building scalable enterprise web applications with
     style="background-color: var(--bg-tertiary); padding: var(--space-lg) 0; border-top: 1px solid var(--border-subtle);">
     <div class="container">
       <div class="text-center">
-        <p class="mb-2" style="color: var(--text-tertiary);">© 2023 Harsha P. All rights reserved.</p>
-        <p style="color: var(--text-tertiary); font-size: 0.9rem;">Built with <i class="fas fa-heart"
-            style="color: #ff4757;"></i> and clean code</p>
+        <p class="mb-2" style="color: var(--text-tertiary); font-weight: 500;">Designed &amp; Developed by Harsha P</p>
+        <p style="color: var(--text-tertiary); font-size: 0.9rem;">React • TypeScript • Vite</p>
+        <p style="color: var(--text-tertiary); font-size: 0.85rem; margin-top: 4px;">© 2026</p>
       </div>
     </div>
   </footer>
 
-
-
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
   <script>
-    // Initialize EmailJS with your Public Key
-    emailjs.init("CqIUlGvkiwHgaDyfu"); // Use only ONE key, keep this one
-  </script>
+    // Initialize EmailJS with Public Key
+    emailjs.init("CqIUlGvkiwHgaDyfu");
 
-  <script>
     // DOM Elements
     const themeToggle = document.getElementById('themeToggle');
     const mobileMenuToggle = document.getElementById('mobileMenuToggle');
     const headerNav = document.getElementById('headerNav');
     const mainHeader = document.getElementById('mainHeader');
     const navLinks = document.querySelectorAll('.headerNav a');
-    const skillLevels = document.querySelectorAll('.skillLevel');
     const projectCards = document.querySelectorAll('.projectCard');
-    const serviceCards = document.querySelectorAll('.serviceCard');
+    const expertiseCards = document.querySelectorAll('.expertiseCard');
+    const backToTop = document.getElementById('backToTop');
+    const scrollProgress = document.getElementById('scrollProgress');
 
     // Theme Toggle
     themeToggle.addEventListener('click', () => {
@@ -2368,31 +2512,20 @@ Building scalable enterprise web applications with
 
       document.documentElement.setAttribute('data-theme', nextTheme);
 
-      // Update icon
       const icon = themeToggle.querySelector('i');
       icon.className = nextTheme === 'dark' ? 'fas fa-moon' : 'fas fa-sun';
-
-      // Update aria-label
       themeToggle.setAttribute('aria-label', `Switch to ${currentTheme} theme`);
-
-      // Save preference to localStorage
       localStorage.setItem('theme', nextTheme);
     });
 
     // Mobile Menu Toggle
     mobileMenuToggle.addEventListener('click', () => {
       headerNav.classList.toggle('active');
-
-      // Update icon
       const icon = mobileMenuToggle.querySelector('i');
       icon.className = headerNav.classList.contains('active') ? 'fas fa-times' : 'fas fa-bars';
-
-      // Update aria-label
-      mobileMenuToggle.setAttribute('aria-label',
-        headerNav.classList.contains('active') ? 'Close menu' : 'Open menu');
+      mobileMenuToggle.setAttribute('aria-label', headerNav.classList.contains('active') ? 'Close menu' : 'Open menu');
     });
 
-    // Close mobile menu when clicking a link
     navLinks.forEach(link => {
       link.addEventListener('click', () => {
         headerNav.classList.remove('active');
@@ -2401,25 +2534,44 @@ Building scalable enterprise web applications with
       });
     });
 
-    // Header scroll effect
+    // Header scroll effect + progress + back to top
     window.addEventListener('scroll', () => {
-      if (window.scrollY > 50) {
+      const scrollY = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+
+      // Header
+      if (scrollY > 50) {
         mainHeader.classList.add('scrolled');
       } else {
         mainHeader.classList.remove('scrolled');
       }
 
-      // Update active nav link based on scroll position
+      // Scroll progress
+      const progress = (scrollY / docHeight) * 100;
+      scrollProgress.style.width = progress + '%';
+
+      // Back to top visibility
+      if (scrollY > 300) {
+        backToTop.classList.add('visible');
+      } else {
+        backToTop.classList.remove('visible');
+      }
+
+      // Active nav link
       updateActiveNavLink();
 
       // Animate elements on scroll
       animateOnScroll();
     });
 
-    // Function to update active nav link based on scroll position
+    // Back to Top click
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({top: 0, behavior: 'smooth'});
+    });
+
     function updateActiveNavLink() {
       const sections = document.querySelectorAll('section');
-      const scrollPosition = window.scrollY + 100;
+      const scrollPosition = window.scrollY + 120;
 
       sections.forEach(section => {
         const sectionTop = section.offsetTop;
@@ -2437,75 +2589,57 @@ Building scalable enterprise web applications with
       });
     }
 
-    // Animate skill bars when in viewport
-    function animateSkillBars() {
-      skillLevels.forEach(skill => {
-        const level = skill.getAttribute('data-level');
-        skill.style.width = `${level}%`;
-      });
-    }
-
-    // Animate elements on scroll
     function animateOnScroll() {
-      const elements = document.querySelectorAll('.projectCard, .serviceCard, .resumeItem, .contactCard');
-
+      const elements = document.querySelectorAll('.projectCard, .expertiseCard, .resumeItem, .contactCard');
       elements.forEach(element => {
         const elementTop = element.getBoundingClientRect().top;
-        const elementVisible = 150;
-
-        if (elementTop < window.innerHeight - elementVisible) {
+        if (elementTop < window.innerHeight - 100) {
           element.classList.add('fade-in');
         }
       });
     }
 
-    // Check if element is in viewport
     function isElementInViewport(el) {
       const rect = el.getBoundingClientRect();
-      return (
-        rect.top <= (window.innerHeight || document.documentElement.clientHeight) * 0.8
-      );
+      return rect.top <= (window.innerHeight || document.documentElement.clientHeight) * 0.8;
     }
 
-    // Check and animate elements on scroll
-    function checkScroll() {
-      const skillsSection = document.getElementById('skills');
-
-      if (isElementInViewport(skillsSection)) {
-        animateSkillBars();
-        window.removeEventListener('scroll', checkScroll);
-      }
-
-      animateOnScroll();
-    }
-
-    // Initialize theme from localStorage
+    // Initialize theme
     function initTheme() {
       const savedTheme = localStorage.getItem('theme') || 'dark';
       document.documentElement.setAttribute('data-theme', savedTheme);
-
-      // Update icon based on saved theme
       const icon = themeToggle.querySelector('i');
       icon.className = savedTheme === 'dark' ? 'fas fa-moon' : 'fas fa-sun';
     }
 
-    // Add hover effects to project cards
+    // Hover tilt effect on project cards
     projectCards.forEach(card => {
       card.addEventListener('mouseenter', () => {
         card.style.zIndex = '10';
       });
-
       card.addEventListener('mouseleave', () => {
         card.style.zIndex = '1';
       });
     });
 
-    // Initialize
+    // IntersectionObserver for animations (more efficient)
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('fade-in');
+        }
+      });
+    }, {threshold: 0.1});
+
     document.addEventListener('DOMContentLoaded', () => {
-      // Initialize theme
       initTheme();
 
-      // Add fade-in animation to sections
+      // Observe all cards
+      document.querySelectorAll('.projectCard, .expertiseCard, .resumeItem, .contactCard').forEach(el => {
+        observer.observe(el);
+      });
+
+      // Initial animation for sections
       const sections = document.querySelectorAll('section');
       sections.forEach((section, index) => {
         section.style.opacity = '0';
@@ -2513,16 +2647,11 @@ Building scalable enterprise web applications with
         section.style.animationDelay = `${index * 0.1}s`;
       });
 
-      // Start checking for skill bars animation
-      window.addEventListener('scroll', checkScroll);
-      checkScroll(); // Check on initial load
-
-      // Add smooth scrolling for anchor links
+      // Smooth scrolling for anchor links
       document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
           const targetId = this.getAttribute('href');
           if (targetId === '#') return;
-
           const targetElement = document.querySelector(targetId);
           if (targetElement) {
             e.preventDefault();
@@ -2534,17 +2663,6 @@ Building scalable enterprise web applications with
         });
       });
 
-      // Add hover effect to service icons
-      serviceCards.forEach(card => {
-        const icon = card.querySelector('.serviceIcon');
-        card.addEventListener('mouseenter', () => {
-          icon.classList.add('pulse');
-        });
-        card.addEventListener('mouseleave', () => {
-          icon.classList.remove('pulse');
-        });
-      });
-
       // Form submission
       const contactForm = document.getElementById('contactForm');
       let lastSubmitTime = 0;
@@ -2553,14 +2671,11 @@ Building scalable enterprise web applications with
         e.preventDefault();
 
         const now = Date.now();
-
-        // ---- Spam Protection: Cooldown (10 seconds) ----
         if (now - lastSubmitTime < 10000) {
           alert('Please wait 10 seconds before sending another message.');
           return;
         }
 
-        // ---- Spam Protection: Honeypot ----
         const honeypot = document.getElementById('company');
         if (honeypot.value.trim() !== '') {
           console.log('Spam detected via honeypot');
@@ -2573,32 +2688,23 @@ Building scalable enterprise web applications with
         const originalText = submitButton.innerHTML;
         const originalBackground = submitButton.style.background;
 
-        // Set hidden fields for EmailJS template
         document.getElementById('from_name').value = contactForm.name.value;
         document.getElementById('reply_to').value = contactForm.email.value;
 
-        // Loading UI
         submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
         submitButton.disabled = true;
 
-        // Send email using EmailJS
         emailjs.sendForm(
-          'service_t8ozirk',   // Your Service ID - CHANGE THIS
-          'template_r3vozwq',  // Your Template ID - CHANGE THIS
+          'service_t8ozirk',
+          'template_r3vozwq',
           contactForm,
-          'CqIUlGvkiwHgaDyfu'  // Your Public Key
+          'CqIUlGvkiwHgaDyfu'
         )
           .then((response) => {
             console.log('SUCCESS!', response.status, response.text);
-
-            // Success UI
             submitButton.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
             submitButton.style.background = 'linear-gradient(135deg, #4CAF50, #2E7D32)';
-
-            // Reset form
             contactForm.reset();
-
-            // Reset button after 3 seconds
             setTimeout(() => {
               submitButton.innerHTML = originalText;
               submitButton.disabled = false;
@@ -2607,15 +2713,9 @@ Building scalable enterprise web applications with
           })
           .catch((error) => {
             console.error('EmailJS Error:', error);
-
-            // Error UI
             submitButton.innerHTML = '<i class="fas fa-times"></i> Failed! Try Again';
             submitButton.style.background = 'linear-gradient(135deg, #E53935, #B71C1C)';
-
-            // Show error message
-            alert('Failed to send message. Please check your connection and try again. Error: ' + error.text);
-
-            // Reset button after 4 seconds
+            alert('Failed to send message. Please check your connection and try again.');
             setTimeout(() => {
               submitButton.innerHTML = originalText;
               submitButton.disabled = false;
