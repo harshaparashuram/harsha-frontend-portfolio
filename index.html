@@ -1584,7 +1584,7 @@
       transform: scale(1.2);
     }
 
-    #github > div > div > div:nth-child(1) > a > i{
+    #github>div>div>div:nth-child(1)>a>i {
       margin-bottom: 0px;
     }
 
@@ -2031,7 +2031,7 @@
       .contactContainer,
       .resumeContainer {
         grid-template-columns: 1fr;
-        text-align: center;
+        /* text-align: center; */
       }
 
       .heroDescription {
@@ -2279,8 +2279,22 @@
         align-items: center;
       }
 
+      .availabilityStatus,
+      .heroIntro {
+        border-radius: var(--radius-lg);
+      }
+
+      .contactForm {
+        padding: var(--space-lg);
+      }
+
       .primaryButton,
       .secondaryButton {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .downloadResumeBtn {
         width: 100%;
         justify-content: center;
       }
