@@ -8,13 +8,39 @@
 
   <!-- SEO & Meta Tags -->
   <meta name="description"
-    content="Frontend Engineer with 3.7+ years of experience building enterprise web applications, dashboards, and CMS platforms with React, TypeScript & Next.js.">
+    content="Frontend Engineer with 3.7+ years of experience building enterprise web applications, dashboards, and CMS platforms with React, TypeScript & JavaScript.">
+  <meta name="keywords" content="Frontend Engineer, React Developer, TypeScript, JavaScript, Portfolio, Harsha P">
+  <meta name="author" content="Harsha P">
   <meta property="og:title" content="Harsha P | Frontend Engineer Portfolio">
   <meta property="og:image" content="/public/images/profile/HarshaProfilePic.png">
   <meta property="og:description"
     content="Frontend Engineer specializing in React, TypeScript, and scalable web applications.">
+  <meta property="og:url" content="https://www.harshap.dev">
+  <meta property="og:type" content="website">
   <meta name="theme-color" content="#000319">
-  <link rel="icon" href="/public/images/profile/HarshaProfilePic.png" type="image/png">
+  <meta name="robots" content="index, follow">
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>H</text></svg>">
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Harsha P",
+      "jobTitle": "Frontend Engineer",
+      "url": "https://www.harshap.dev",
+      "email": "harshaguru321@gmail.com",
+      "sameAs": [
+        "https://github.com/harshaparashuram",
+        "https://linkedin.com/in/HarshaP1307"
+      ],
+      "worksFor": {
+        "@type": "Organization",
+        "name": "72 Dragons (The Dragon Year Limited)"
+      }
+    }
+  </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -425,7 +451,6 @@
         HOME HERO SECTION
         ===================================================== */
     .homeSection {
-      /* min-height: 100vh; */
       display: flex;
       align-items: center;
       padding-top: var(--space-xl);
@@ -637,6 +662,66 @@
       background: var(--bg-tertiary);
     }
 
+    /* Availability Status */
+    .availabilityStatus {
+      display: inline-block;
+      padding: 8px 20px;
+      background: rgba(79, 195, 247, 0.1);
+      border: 1px solid rgba(79, 195, 247, 0.2);
+      border-radius: var(--radius-xl);
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      margin-bottom: var(--space-md);
+    }
+
+    .availabilityStatus i {
+      color: #4CAF50;
+      margin-right: 8px;
+    }
+
+    /* =====================================================
+        PROFESSIONAL EXPERIENCE HIGHLIGHTS
+        ===================================================== */
+    .highlightsSection {
+      background-color: var(--bg-secondary);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .highlightsGrid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: var(--space-md);
+      margin-top: var(--space-lg);
+    }
+
+    .highlightItem {
+      display: flex;
+      align-items: center;
+      gap: var(--space-sm);
+      padding: var(--space-md);
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-md);
+      transition: all var(--transition-fast) var(--ease-out);
+    }
+
+    .highlightItem:hover {
+      transform: translateY(-5px);
+      border-color: var(--accent-primary);
+      box-shadow: var(--shadow-md);
+    }
+
+    .highlightItem i {
+      color: var(--accent-primary);
+      font-size: 1.25rem;
+    }
+
+    .highlightItem span {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+    }
+
     /* =====================================================
         ABOUT SECTION
         ===================================================== */
@@ -794,6 +879,35 @@
       padding-left: var(--space-lg);
     }
 
+    .additionalSkills {
+      margin-top: var(--space-md);
+      padding: var(--space-md);
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-md);
+    }
+
+    .additionalSkills h4 {
+      color: var(--accent-primary);
+      margin-bottom: var(--space-sm);
+      font-size: 1rem;
+    }
+
+    .additionalSkills .skillTags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .additionalSkills .skillTags span {
+      padding: 4px 12px;
+      background: var(--bg-tertiary);
+      border-radius: var(--radius-xl);
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      border: 1px solid var(--border-subtle);
+    }
+
     /* =====================================================
         PROJECTS SECTION
         ===================================================== */
@@ -923,6 +1037,18 @@
       background: var(--accent-gradient);
       color: white;
       transform: translateY(-2px);
+    }
+
+    .projectLink.nda {
+      background: transparent;
+      border: 1px dashed var(--border-medium);
+      color: var(--text-tertiary);
+    }
+
+    .projectLink.nda:hover {
+      border-color: var(--accent-primary);
+      color: var(--text-primary);
+      background: var(--glass-bg);
     }
 
     /* =====================================================
@@ -1703,6 +1829,10 @@
       .trustBadge {
         font-size: 0.8rem;
       }
+
+      .highlightsGrid {
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
 
     @media (max-width: 410px) {
@@ -1780,6 +1910,10 @@
         flex-direction: column;
         align-items: center;
         gap: 4px;
+      }
+
+      .highlightsGrid {
+        grid-template-columns: 1fr;
       }
     }
 
@@ -1960,6 +2094,13 @@
 
         <!-- Text Content -->
         <div class="homeHeroContent">
+          <!-- Availability Status -->
+          <div class="availabilityStatus">
+            <i class="fas fa-circle"></i>
+            Available for Frontend Engineer, React Developer &amp; Full Stack Developer opportunities • Open to Remote,
+            Hybrid &amp; Relocation
+          </div>
+
           <p class="heroIntro">
             Frontend Engineer • 3.7+ Years Experience
           </p>
@@ -1970,7 +2111,7 @@
 
           <p class="heroRole">
             Building scalable enterprise web applications with
-            <span>React, TypeScript &amp; Next.js</span>
+            <span>React.js • TypeScript • JavaScript</span>
           </p>
 
           <p class="heroDescription">
@@ -1982,11 +2123,11 @@
           <!-- Trust Badges -->
           <div class="trustBadges">
             <span class="trustBadge"><i class="fas fa-check-circle"></i> 3.7+ Years Experience</span>
-            <span class="trustBadge"><i class="fas fa-check-circle"></i> Enterprise Projects</span>
+            <span class="trustBadge"><i class="fas fa-check-circle"></i> Enterprise Web Applications</span>
             <span class="trustBadge"><i class="fas fa-check-circle"></i> React.js</span>
             <span class="trustBadge"><i class="fas fa-check-circle"></i> TypeScript</span>
             <span class="trustBadge"><i class="fas fa-check-circle"></i> REST APIs</span>
-            <span class="trustBadge"><i class="fas fa-check-circle"></i> Open to Full-time</span>
+            <span class="trustBadge"><i class="fas fa-check-circle"></i> Open to Work</span>
           </div>
 
           <div class="heroActions">
@@ -1996,10 +2137,53 @@
             <a href="#projects" class="secondaryButton">
               <i class="fas fa-code"></i> View Projects
             </a>
-            <a href="#" class="downloadResumeBtn" download>
+            <a href="/resume/Harsha_P_Resume.pdf" class="downloadResumeBtn" download>
               <i class="fas fa-file-pdf"></i> Download Resume
             </a>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Professional Experience Highlights -->
+  <section class="highlightsSection" id="highlights">
+    <div class="container">
+      <h2 class="section-title">Experience Highlights</h2>
+      <p class="section-subtitle">Key areas of professional expertise</p>
+
+      <div class="highlightsGrid">
+        <div class="highlightItem">
+          <i class="fas fa-briefcase"></i>
+          <span>3.7+ Years Professional Experience</span>
+        </div>
+        <div class="highlightItem">
+          <i class="fas fa-building"></i>
+          <span>Built Enterprise Applications</span>
+        </div>
+        <div class="highlightItem">
+          <i class="fas fa-plug"></i>
+          <span>REST API Integration</span>
+        </div>
+        <div class="highlightItem">
+          <i class="fas fa-mobile-alt"></i>
+          <span>Responsive Web Development</span>
+        </div>
+        <div class="highlightItem">
+          <i class="fas fa-cubes"></i>
+          <span>CMS Platforms</span>
+        </div>
+        <div class="highlightItem">
+          <i class="fas fa-chart-pie"></i>
+          <span>Dashboard Applications</span>
+        </div>
+        <div class="highlightItem">
+          <i class="fas fa-globe"></i>
+          <span>Cross-browser Compatibility</span>
+        </div>
+        <div class="highlightItem">
+          <i class="fas fa-tachometer-alt"></i>
+          <span>Performance Optimization</span>
         </div>
       </div>
     </div>
@@ -2020,11 +2204,11 @@
             <p>I'm a Frontend Engineer with 3.7+ years of experience building enterprise-grade web applications. I've
               worked on large-scale platforms including CMS systems, dashboard interfaces, and responsive web
               applications that serve thousands of users.</p>
-            <p>At 72 Dragons, I've led frontend development for multiple client projects, working with cross-functional
-              teams to deliver scalable, performant solutions. My work involves integrating REST APIs, optimizing
+            <p>I contribute to frontend development across multiple client projects in collaboration with designers,
+              backend developers, QA engineers, and stakeholders. My work involves integrating REST APIs, optimizing
               performance, and building reusable component libraries that accelerate development across projects.</p>
-            <p>I'm passionate about creating clean, maintainable code and mentoring junior developers. I believe in the
-              power of great user experiences and the importance of performance in modern web applications.</p>
+            <p>I'm passionate about creating clean, maintainable code and believe in the power of great user experiences
+              and the importance of performance in modern web applications.</p>
           </div>
 
           <div class="aboutStats">
@@ -2033,12 +2217,12 @@
               <div class="statLabel">Years Experience</div>
             </div>
             <div class="statItem">
-              <div class="statNumber">15+</div>
-              <div class="statLabel">Projects Delivered</div>
+              <div class="statNumber">React.js</div>
+              <div class="statLabel">Primary Framework</div>
             </div>
             <div class="statItem">
-              <div class="statNumber">99%</div>
-              <div class="statLabel">Client Satisfaction</div>
+              <div class="statNumber">REST</div>
+              <div class="statLabel">API Integration</div>
             </div>
           </div>
         </div>
@@ -2062,29 +2246,25 @@
               <li>JavaScript (ES6+)</li>
               <li>HTML5</li>
               <li>CSS3 / Sass</li>
-              <li>Next.js</li>
+              <li>Bootstrap / Tailwind CSS</li>
             </ul>
           </div>
           <div class="skillCategory">
-            <h4>Backend</h4>
+            <h4>Backend &amp; APIs</h4>
             <ul>
               <li>Node.js</li>
               <li>Express</li>
               <li>REST APIs</li>
-              <li>Java (Core)</li>
-              <li>J2EE / Servlets</li>
-              <li>JDBC</li>
+              <li>Postman</li>
             </ul>
           </div>
           <div class="skillCategory">
-            <h4>Tools</h4>
+            <h4>Tools &amp; Design</h4>
             <ul>
               <li>Git / GitHub</li>
-              <li>Postman</li>
               <li>Figma</li>
               <li>Chrome DevTools</li>
-              <li>Webpack</li>
-              <li>npm / yarn</li>
+              <li>Responsive Design</li>
             </ul>
           </div>
         </div>
@@ -2099,6 +2279,18 @@
           <p class="aboutText">I follow agile methodologies, writing clean, modular, and well-documented code. I
             prioritize accessibility, cross-browser compatibility, and mobile-first design to ensure applications work
             seamlessly for all users.</p>
+
+          <!-- Additional Skills -->
+          <div class="additionalSkills">
+            <h4>Learning &amp; Foundations</h4>
+            <div class="skillTags">
+              <span>Java (Core)</span>
+              <span>J2EE / Servlets</span>
+              <span>JDBC</span>
+              <span>Webpack</span>
+              <span>yarn</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -2129,7 +2321,7 @@
             </div>
             <div class="projectLinks">
               <a href="#" class="projectLink"><i class="fab fa-github"></i> Code</a>
-              <a href="#" class="projectLink"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+              <a href="#" class="projectLink nda"><i class="fas fa-lock"></i> Details available upon request</a>
             </div>
           </div>
         </div>
@@ -2148,11 +2340,11 @@
               <span class="techTag">React</span>
               <span class="techTag">TypeScript</span>
               <span class="techTag">Node.js</span>
-              <span class="techTag">MongoDB</span>
+              <span class="techTag">REST API</span>
             </div>
             <div class="projectLinks">
               <a href="#" class="projectLink"><i class="fab fa-github"></i> Code</a>
-              <a href="#" class="projectLink"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+              <a href="#" class="projectLink nda"><i class="fas fa-lock"></i> Details available upon request</a>
             </div>
           </div>
         </div>
@@ -2170,12 +2362,12 @@
             <div class="projectTech">
               <span class="techTag">React</span>
               <span class="techTag">Express</span>
+              <span class="techTag">REST API</span>
               <span class="techTag">PostgreSQL</span>
-              <span class="techTag">Google Calendar API</span>
             </div>
             <div class="projectLinks">
               <a href="#" class="projectLink"><i class="fab fa-github"></i> Code</a>
-              <a href="#" class="projectLink"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+              <a href="#" class="projectLink nda"><i class="fas fa-lock"></i> Details available upon request</a>
             </div>
           </div>
         </div>
@@ -2194,11 +2386,11 @@
               <span class="techTag">React</span>
               <span class="techTag">TypeScript</span>
               <span class="techTag">Node.js</span>
-              <span class="techTag">GraphQL</span>
+              <span class="techTag">REST API</span>
             </div>
             <div class="projectLinks">
               <a href="#" class="projectLink"><i class="fab fa-github"></i> Code</a>
-              <a href="#" class="projectLink"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+              <a href="#" class="projectLink nda"><i class="fas fa-lock"></i> Details available upon request</a>
             </div>
           </div>
         </div>
@@ -2215,14 +2407,14 @@
               interactive galleries, and seamless shopping experience. Built with performance and aesthetics in mind.
             </p>
             <div class="projectTech">
-              <span class="techTag">Next.js</span>
+              <span class="techTag">React</span>
               <span class="techTag">TypeScript</span>
               <span class="techTag">Tailwind CSS</span>
-              <span class="techTag">Framer Motion</span>
+              <span class="techTag">REST API</span>
             </div>
             <div class="projectLinks">
               <a href="#" class="projectLink"><i class="fab fa-github"></i> Code</a>
-              <a href="#" class="projectLink"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+              <a href="#" class="projectLink nda"><i class="fas fa-lock"></i> Details available upon request</a>
             </div>
           </div>
         </div>
@@ -2245,7 +2437,7 @@
             </div>
             <div class="projectLinks">
               <a href="#" class="projectLink"><i class="fab fa-github"></i> Code</a>
-              <a href="#" class="projectLink"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+              <a href="#" class="projectLink nda"><i class="fas fa-lock"></i> Details available upon request</a>
             </div>
           </div>
         </div>
@@ -2338,10 +2530,9 @@
               <ul>
                 <li>Built responsive web applications using React, TypeScript, and JavaScript with PHP backend
                   integration.</li>
-                <li>Acted as tech lead, guiding team workflows and conducting code reviews across 15+ client projects.
-                </li>
+                <li>Collaborated with cross-functional teams to deliver solutions across 15+ client projects.</li>
                 <li>Implemented testing strategies that improved code quality and reduced bugs by 30%.</li>
-                <li>Mentored junior developers in API integration and performance optimization techniques.</li>
+                <li>Integrated REST APIs and optimized performance for enterprise applications.</li>
               </ul>
             </div>
           </div>
@@ -2394,7 +2585,7 @@
               <i class="fas fa-envelope"></i>
             </div>
             <h3 class="contactTitle">Email</h3>
-            <p class="contactDetail">harshap.dev1999@gmail.com</p>
+            <p class="contactDetail">harshaguru321@gmail.com</p>
             <p class="contactDetail">Typically responds within 24 hours</p>
           </div>
 
@@ -2417,16 +2608,16 @@
           </div>
 
           <div class="socialLinks">
-            <a href="#" class="socialLink" aria-label="GitHub">
+            <a href="https://github.com/harshaparashuram" class="socialLink" aria-label="GitHub" target="_blank">
               <i class="fab fa-github"></i>
             </a>
-            <a href="#" class="socialLink" aria-label="LinkedIn">
+            <a href="https://linkedin.com/in/HarshaP1307" class="socialLink" aria-label="LinkedIn" target="_blank">
               <i class="fab fa-linkedin-in"></i>
             </a>
-            <a href="#" class="socialLink" aria-label="Portfolio">
+            <a href="https://www.harshap.dev" class="socialLink" aria-label="Portfolio" target="_blank">
               <i class="fas fa-globe"></i>
             </a>
-            <a href="#" class="socialLink" aria-label="Email">
+            <a href="mailto:harshaguru321@gmail.com" class="socialLink" aria-label="Email">
               <i class="fas fa-envelope"></i>
             </a>
           </div>
@@ -2482,9 +2673,10 @@
     style="background-color: var(--bg-tertiary); padding: var(--space-lg) 0; border-top: 1px solid var(--border-subtle);">
     <div class="container">
       <div class="text-center">
-        <p class="mb-2" style="color: var(--text-tertiary); font-weight: 500;">Designed &amp; Developed by Harsha P</p>
-        <p style="color: var(--text-tertiary); font-size: 0.9rem;">React • TypeScript • Vite</p>
-        <p style="color: var(--text-tertiary); font-size: 0.85rem; margin-top: 4px;">© 2026</p>
+        <p class="mb-1" style="color: var(--text-tertiary); font-weight: 500;">Designed &amp; Developed by Harsha P</p>
+        <p style="color: var(--text-tertiary); font-size: 0.9rem;">Frontend Engineer</p>
+        <p style="color: var(--text-tertiary); font-size: 0.9rem;">React • TypeScript • JavaScript</p>
+        <p style="color: var(--text-tertiary); font-size: 0.85rem; margin-top: 4px;">Last Updated: July 2026</p>
       </div>
     </div>
   </footer>
@@ -2590,7 +2782,7 @@
     }
 
     function animateOnScroll() {
-      const elements = document.querySelectorAll('.projectCard, .expertiseCard, .resumeItem, .contactCard');
+      const elements = document.querySelectorAll('.projectCard, .expertiseCard, .resumeItem, .contactCard, .highlightItem');
       elements.forEach(element => {
         const elementTop = element.getBoundingClientRect().top;
         if (elementTop < window.innerHeight - 100) {
@@ -2635,7 +2827,7 @@
       initTheme();
 
       // Observe all cards
-      document.querySelectorAll('.projectCard, .expertiseCard, .resumeItem, .contactCard').forEach(el => {
+      document.querySelectorAll('.projectCard, .expertiseCard, .resumeItem, .contactCard, .highlightItem').forEach(el => {
         observer.observe(el);
       });
 
