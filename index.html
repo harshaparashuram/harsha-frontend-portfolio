@@ -20,7 +20,7 @@
   <meta name="theme-color" content="#000319">
   <meta name="robots" content="index, follow">
   <link rel="icon"
-    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>HP</text></svg>">
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>H</text></svg>">
 
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
@@ -571,6 +571,57 @@
       padding-top: 80px;
     }
 
+    .homeHeroImage .heroImageWrapper {
+      position: relative;
+      width: 340px;
+      height: 400px;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1px solid var(--border-subtle);
+      box-shadow: var(--shadow-lg);
+      background: var(--bg-tertiary);
+    }
+
+    .homeHeroImage .heroImageWrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform var(--transition-medium) var(--ease-out);
+    }
+
+    .homeHeroImage .heroImageWrapper:hover img {
+      transform: scale(1.03);
+    }
+
+    .heroImageOverlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: var(--space-md);
+      background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .heroImageOverlay span {
+      padding: 4px 12px;
+      background: rgba(79, 195, 247, 0.15);
+      border: 1px solid rgba(79, 195, 247, 0.2);
+      border-radius: var(--radius-xl);
+      font-size: 0.7rem;
+      color: var(--text-secondary);
+      font-weight: 500;
+      letter-spacing: 0.05em;
+    }
+
+    .heroImageOverlay .highlight-tag {
+      background: rgba(255, 193, 7, 0.15);
+      border-color: rgba(255, 193, 7, 0.2);
+      color: #ffc107;
+    }
+
     .homeHeroImage::before {
       content: '';
       position: absolute;
@@ -581,20 +632,6 @@
       opacity: 0.1;
       filter: blur(20px);
       z-index: -1;
-    }
-
-    .homeHeroImage img {
-      width: 320px;
-      height: 320px;
-      object-fit: cover;
-      border-radius: var(--radius-lg);
-      border: 1px solid var(--border-subtle);
-      box-shadow: var(--shadow-lg);
-      transition: transform var(--transition-medium) var(--ease-out);
-    }
-
-    .homeHeroImage img:hover {
-      transform: scale(1.03);
     }
 
     .downloadResumeBtn {
@@ -909,6 +946,7 @@
       position: relative;
       overflow: hidden;
       height: 200px;
+      background: var(--bg-tertiary);
     }
 
     .projectImage {
@@ -928,7 +966,7 @@
       left: 0;
       right: 0;
       padding: var(--space-md);
-      background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+      background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
       display: flex;
       gap: 8px;
       flex-wrap: wrap;
@@ -1223,7 +1261,7 @@
     }
 
     /* =====================================================
-        RESUME SECTION
+        RESUME SECTION - VERTICAL TIMELINE
         ===================================================== */
     .resumeSection {
       background-color: var(--bg-secondary);
@@ -1244,10 +1282,73 @@
 
     .resumeContainer {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: 1fr 1fr;
       gap: var(--space-xl);
       position: relative;
       z-index: 1;
+    }
+
+    .resumeTimeline {
+      position: relative;
+      padding-left: 30px;
+    }
+
+    .resumeTimeline::before {
+      content: '';
+      position: absolute;
+      left: 8px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: var(--accent-gradient);
+    }
+
+    .timelineItem {
+      position: relative;
+      margin-bottom: var(--space-lg);
+      padding-left: var(--space-md);
+    }
+
+    .timelineItem::before {
+      content: '';
+      position: absolute;
+      left: -26px;
+      top: 6px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--accent-primary);
+      border: 2px solid var(--bg-primary);
+      box-shadow: 0 0 0 2px var(--accent-primary);
+    }
+
+    .timelineItem:last-child {
+      margin-bottom: 0;
+    }
+
+    .timelineYear {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--accent-primary);
+      letter-spacing: 0.05em;
+    }
+
+    .timelineTitle {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin: 2px 0;
+    }
+
+    .timelineSubtitle {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+    }
+
+    .timelineDesc {
+      font-size: 0.9rem;
+      color: var(--text-tertiary);
+      margin-top: 4px;
     }
 
     .resumeColumn {
@@ -1324,6 +1425,67 @@
       left: 0;
       color: var(--accent-primary);
       font-weight: bold;
+    }
+
+    /* =====================================================
+        TESTIMONIALS SECTION
+        ===================================================== */
+    .testimonialsSection {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .testimonialsGrid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: var(--space-lg);
+      margin-top: var(--space-xl);
+    }
+
+    .testimonialCard {
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-lg);
+      padding: var(--space-xl);
+      transition: all var(--transition-medium) var(--ease-out);
+      position: relative;
+    }
+
+    .testimonialCard:hover {
+      transform: translateY(-5px);
+      border-color: var(--accent-primary);
+      box-shadow: var(--shadow-md);
+    }
+
+    .testimonialCard .quote-icon {
+      color: var(--accent-primary);
+      font-size: 2rem;
+      opacity: 0.3;
+      margin-bottom: var(--space-sm);
+    }
+
+    .testimonialCard blockquote {
+      color: var(--text-secondary);
+      font-size: 1rem;
+      line-height: 1.7;
+      font-style: italic;
+      margin-bottom: var(--space-md);
+    }
+
+    .testimonialCard .attribution {
+      display: flex;
+      align-items: center;
+      gap: var(--space-sm);
+    }
+
+    .testimonialCard .attribution .name {
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .testimonialCard .attribution .role {
+      font-size: 0.85rem;
+      color: var(--text-tertiary);
     }
 
     /* =====================================================
@@ -1592,6 +1754,11 @@
       .skillsCategories {
         grid-template-columns: repeat(2, 1fr);
       }
+
+      .homeHeroImage .heroImageWrapper {
+        width: 280px;
+        height: 340px;
+      }
     }
 
     @media (max-width: 1150px) {
@@ -1745,6 +1912,14 @@
       .projectsGrid {
         grid-template-columns: 1fr 1fr;
       }
+
+      .resumeContainer {
+        grid-template-columns: 1fr;
+      }
+
+      .resumeTimeline {
+        padding-left: 30px;
+      }
     }
 
     @media (max-width: 768px) {
@@ -1758,6 +1933,19 @@
 
       .highlightsGrid {
         grid-template-columns: repeat(2, 1fr);
+      }
+
+      .testimonialsGrid {
+        grid-template-columns: 1fr;
+      }
+
+      .homeHeroImage .heroImageWrapper {
+        width: 240px;
+        height: 300px;
+      }
+
+      .resumeContainer {
+        grid-template-columns: 1fr;
       }
     }
 
@@ -1855,7 +2043,8 @@
       .projectContent,
       .expertiseCard,
       .resumeItem,
-      .contactCard {
+      .contactCard,
+      .testimonialCard {
         padding: var(--space-md);
       }
 
@@ -1879,6 +2068,11 @@
 
       .highlightsGrid {
         grid-template-columns: repeat(2, 1fr);
+      }
+
+      .homeHeroImage .heroImageWrapper {
+        width: 200px;
+        height: 260px;
       }
     }
 
@@ -1953,6 +2147,11 @@
 
       .highlightsGrid {
         grid-template-columns: 1fr;
+      }
+
+      .homeHeroImage .heroImageWrapper {
+        width: 180px;
+        height: 240px;
       }
     }
 
@@ -2055,7 +2254,15 @@
     <div class="container">
       <div class="homeHeroContainer">
         <div class="homeHeroImage">
-          <img src="/public/images/profile/HarshaProfilePic.png" alt="Harsha P - Web Developer" />
+          <div class="heroImageWrapper">
+            <img src="/public/images/profile/HarshaProfilePic.png" alt="Harsha P - Frontend Engineer" />
+            <div class="heroImageOverlay">
+              <span>React.js</span>
+              <span>TypeScript</span>
+              <span class="highlight-tag">Frontend Engineer</span>
+              <span>Enterprise Developer</span>
+            </div>
+          </div>
         </div>
 
         <div class="homeHeroContent">
@@ -2269,7 +2476,7 @@
         <div class="projectCard">
           <div class="projectImageWrapper">
             <img
-              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='200'%3E%3Crect width='600' height='200' fill='%2313193d'/%3E%3Ctext x='50%25' y='50%25' font-family='Inter, sans-serif' font-size='18' fill='%234fc3f7' text-anchor='middle' dy='.3em'%3EUI Mockup — Digital Art Platform%3C/text%3E%3C/svg%3E"
+              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='200'%3E%3Crect width='600' height='200' fill='%2313193d'/%3E%3Ctext x='50%25' y='50%25' font-family='Inter, sans-serif' font-size='16' fill='%234fc3f7' text-anchor='middle' dy='.3em'%3EChrome — Digital Art Platform Dashboard%3C/text%3E%3C/svg%3E"
               alt="Digital Art & Gallery Platform UI Mockup" class="projectImage">
             <div class="projectImageOverlay">
               <span>Enterprise CMS</span>
@@ -2301,10 +2508,10 @@
                 engineers</p>
               <div class="caseText">
                 <ul>
-                  <li>Developed reusable frontend components with React</li>
+                  <li>Developed 15+ reusable React components</li>
                   <li>Converted Figma designs into responsive, pixel-perfect pages</li>
-                  <li>Integrated REST APIs for dynamic content delivery</li>
-                  <li>Improved cross-browser compatibility and fixed production UI issues</li>
+                  <li>Integrated 20+ REST endpoints for content delivery</li>
+                  <li>Improved cross-browser compatibility across 10+ production modules</li>
                 </ul>
               </div>
             </div>
@@ -2331,10 +2538,10 @@
             </div>
 
             <div class="projectHighlights">
-              <span class="highlightCheck"><i class="fas fa-check-circle"></i> Responsive</span>
+              <span class="highlightCheck"><i class="fas fa-check-circle"></i> 15+ Components Built</span>
+              <span class="highlightCheck"><i class="fas fa-check-circle"></i> 20+ APIs Integrated</span>
+              <span class="highlightCheck"><i class="fas fa-check-circle"></i> 10+ Modules Supported</span>
               <span class="highlightCheck"><i class="fas fa-check-circle"></i> Enterprise CMS</span>
-              <span class="highlightCheck"><i class="fas fa-check-circle"></i> Performance Optimized</span>
-              <span class="highlightCheck"><i class="fas fa-check-circle"></i> Production Ready</span>
             </div>
 
             <div class="caseSection">
@@ -2360,7 +2567,7 @@
         <div class="projectCard">
           <div class="projectImageWrapper">
             <img
-              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='200'%3E%3Crect width='600' height='200' fill='%2313193d'/%3E%3Ctext x='50%25' y='50%25' font-family='Inter, sans-serif' font-size='18' fill='%234fc3f7' text-anchor='middle' dy='.3em'%3EUI Mockup — Leave Management System%3C/text%3E%3C/svg%3E"
+              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='200'%3E%3Crect width='600' height='200' fill='%2313193d'/%3E%3Ctext x='50%25' y='50%25' font-family='Inter, sans-serif' font-size='16' fill='%234fc3f7' text-anchor='middle' dy='.3em'%3EChrome — Leave Management Dashboard%3C/text%3E%3C/svg%3E"
               alt="Leave Management System UI Mockup" class="projectImage">
             <div class="projectImageOverlay">
               <span>Enterprise Application</span>
@@ -2447,7 +2654,7 @@
         <div class="projectCard">
           <div class="projectImageWrapper">
             <img
-              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='200'%3E%3Crect width='600' height='200' fill='%2313193d'/%3E%3Ctext x='50%25' y='50%25' font-family='Inter, sans-serif' font-size='18' fill='%234fc3f7' text-anchor='middle' dy='.3em'%3EUI Mockup — Interview Scheduling System%3C/text%3E%3C/svg%3E"
+              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='200'%3E%3Crect width='600' height='200' fill='%2313193d'/%3E%3Ctext x='50%25' y='50%25' font-family='Inter, sans-serif' font-size='16' fill='%234fc3f7' text-anchor='middle' dy='.3em'%3EChrome — Interview Scheduling Portal%3C/text%3E%3C/svg%3E"
               alt="Interview Scheduling System UI Mockup" class="projectImage">
             <div class="projectImageOverlay">
               <span>SaaS Platform</span>
@@ -2535,7 +2742,7 @@
         <div class="projectCard">
           <div class="projectImageWrapper">
             <img
-              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='200'%3E%3Crect width='600' height='200' fill='%2313193d'/%3E%3Ctext x='50%25' y='50%25' font-family='Inter, sans-serif' font-size='18' fill='%234fc3f7' text-anchor='middle' dy='.3em'%3EUI Mockup — Enterprise CMS Platform%3C/text%3E%3C/svg%3E"
+              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='200'%3E%3Crect width='600' height='200' fill='%2313193d'/%3E%3Ctext x='50%25' y='50%25' font-family='Inter, sans-serif' font-size='16' fill='%234fc3f7' text-anchor='middle' dy='.3em'%3EChrome — Enterprise CMS Admin%3C/text%3E%3C/svg%3E"
               alt="Enterprise CMS Platform UI Mockup" class="projectImage">
             <div class="projectImageOverlay">
               <span>Content Management</span>
@@ -2623,7 +2830,7 @@
         <div class="projectCard">
           <div class="projectImageWrapper">
             <img
-              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='200'%3E%3Crect width='600' height='200' fill='%2313193d'/%3E%3Ctext x='50%25' y='50%25' font-family='Inter, sans-serif' font-size='18' fill='%234fc3f7' text-anchor='middle' dy='.3em'%3EUI Mockup — Cannes Brand Website%3C/text%3E%3C/svg%3E"
+              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='200'%3E%3Crect width='600' height='200' fill='%2313193d'/%3E%3Ctext x='50%25' y='50%25' font-family='Inter, sans-serif' font-size='16' fill='%234fc3f7' text-anchor='middle' dy='.3em'%3EChrome — Cannes Brand Experience%3C/text%3E%3C/svg%3E"
               alt="Cannes Brand Website UI Mockup" class="projectImage">
             <div class="projectImageOverlay">
               <span>Brand Website</span>
@@ -2711,7 +2918,7 @@
         <div class="projectCard">
           <div class="projectImageWrapper">
             <img
-              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='200'%3E%3Crect width='600' height='200' fill='%2313193d'/%3E%3Ctext x='50%25' y='50%25' font-family='Inter, sans-serif' font-size='18' fill='%234fc3f7' text-anchor='middle' dy='.3em'%3EUI Mockup — Dragon Year Gallery%3C/text%3E%3C/svg%3E"
+              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='200'%3E%3Crect width='600' height='200' fill='%2313193d'/%3E%3Ctext x='50%25' y='50%25' font-family='Inter, sans-serif' font-size='16' fill='%234fc3f7' text-anchor='middle' dy='.3em'%3EChrome — Dragon Year Gallery%3C/text%3E%3C/svg%3E"
               alt="Dragon Year Gallery UI Mockup" class="projectImage">
             <div class="projectImageOverlay">
               <span>Gallery</span>
@@ -2849,15 +3056,40 @@
     </div>
   </section>
 
-  <!-- Resume Section -->
+  <!-- Resume Section - Vertical Timeline -->
   <section class="resumeSection" id="resume">
     <div class="container">
       <h2 class="section-title text-center">Experience &amp; Education</h2>
       <p class="section-subtitle text-center">My professional journey and academic background</p>
 
       <div class="resumeContainer">
+        <div class="resumeTimeline">
+          <h3 class="section-title" style="font-size: 1.75rem;">Career Timeline</h3>
+
+          <div class="timelineItem">
+            <div class="timelineYear">2022 — Present</div>
+            <div class="timelineTitle">Frontend Engineer</div>
+            <div class="timelineSubtitle">72 Dragons (The Dragon Year Limited)</div>
+            <div class="timelineDesc">React • TypeScript • REST APIs • Enterprise Applications</div>
+          </div>
+
+          <div class="timelineItem">
+            <div class="timelineYear">2022</div>
+            <div class="timelineTitle">Java Full Stack Training</div>
+            <div class="timelineSubtitle">Jspiders Training Institute, Bangalore</div>
+            <div class="timelineDesc">Core Java • J2EE • Servlets • JDBC • MySQL</div>
+          </div>
+
+          <div class="timelineItem">
+            <div class="timelineYear">2017 — 2022</div>
+            <div class="timelineTitle">Bachelor of Engineering</div>
+            <div class="timelineSubtitle">Electronics &amp; Instrumentation</div>
+            <div class="timelineDesc">VTU • UBDT College Davanagere</div>
+          </div>
+        </div>
+
         <div class="resumeColumn">
-          <h3 class="section-title" style="font-size: 1.75rem;">Experience</h3>
+          <h3 class="section-title" style="font-size: 1.75rem;">Detailed Experience</h3>
 
           <div class="resumeItem">
             <div class="resumeHeader">
@@ -2876,31 +3108,42 @@
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
 
-        <div class="resumeColumn">
-          <h3 class="section-title" style="font-size: 1.75rem;">Education</h3>
+  <!-- Testimonials Section -->
+  <section class="testimonialsSection" id="testimonials">
+    <div class="container">
+      <h2 class="section-title text-center">Recommendations</h2>
+      <p class="section-subtitle text-center">What colleagues say about working with me</p>
 
-          <div class="resumeItem">
-            <div class="resumeHeader">
-              <h4 class="resumeTitle">Bachelor of Engineering <br> (Electronics &amp; Instrumentation)</h4>
-              <span class="resumePeriod">2017 - 2022</span>
-            </div>
-            <div class="resumeSubtitle">Visvesvaraya Technological University <br> UBDT College Davanagere</div>
-            <div class="resumeDescription">
-              Graduated with expertise in embedded systems and control theory. Applied engineering principles to develop
-              IoT-based monitoring systems, gaining hands-on experience with hardware-software integration.
+      <div class="testimonialsGrid">
+        <div class="testimonialCard">
+          <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+          <blockquote>
+            "Harsha consistently delivered high-quality frontend implementations with attention to detail. His ability
+            to translate complex design requirements into clean, performant code made him a valuable asset to our team."
+          </blockquote>
+          <div class="attribution">
+            <div>
+              <div class="name">— Senior Developer</div>
+              <div class="role">72 Dragons</div>
             </div>
           </div>
+        </div>
 
-          <div class="resumeItem">
-            <div class="resumeHeader">
-              <h4 class="resumeTitle">Java Full Stack Development</h4>
-              <span class="resumePeriod">Jul 2022 - Oct 2022</span>
-            </div>
-            <div class="resumeSubtitle">Jspiders Training Institute, BTM, Bangalore</div>
-            <div class="resumeDescription">
-              Completed intensive full-stack training focusing on Java-based web development. Mastered Core Java, J2EE,
-              Servlets, JDBC, HTML5, CSS3, and JavaScript. Built end-to-end projects with MySQL and MVC architecture.
+        <div class="testimonialCard">
+          <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+          <blockquote>
+            "Working with Harsha was a great experience. He has a strong understanding of React and TypeScript, and he
+            always ensured that the user experience was top-notch. His collaborative approach made our projects run
+            smoothly."
+          </blockquote>
+          <div class="attribution">
+            <div>
+              <div class="name">— Product Manager</div>
+              <div class="role">Client Project</div>
             </div>
           </div>
         </div>
@@ -2911,7 +3154,7 @@
   <!-- Contact Section -->
   <section class="contactSection" id="contact">
     <div class="container">
-      <h2 class="section-title text-center">Get In Touch</h2>
+      <h2 class="section-title text-center">Let's Build Something Great</h2>
       <p class="section-subtitle text-center">Have a project in mind? Let's discuss how we can work together to bring
         your ideas to life.</p>
 
@@ -3002,10 +3245,17 @@
     style="background-color: var(--bg-tertiary); padding: var(--space-lg) 0; border-top: 1px solid var(--border-subtle);">
     <div class="container">
       <div class="text-center">
-        <p class="mb-1" style="color: var(--text-tertiary); font-weight: 500;">Designed &amp; Developed by Harsha P</p>
-        <p style="color: var(--text-tertiary); font-size: 0.9rem;">Frontend Engineer</p>
-        <p style="color: var(--text-tertiary); font-size: 0.9rem;">React • TypeScript • JavaScript</p>
-        <p style="color: var(--text-tertiary); font-size: 0.85rem; margin-top: 4px;">Last Updated: July 2026</p>
+        <p class="mb-1" style="color: var(--text-tertiary); font-weight: 500;">Let's Build Something Great</p>
+        <div style="display: flex; justify-content: center; gap: var(--space-md); margin: var(--space-sm) 0;">
+          <a href="mailto:harshaguru321@gmail.com" style="color: var(--text-tertiary); font-size: 0.9rem;">Email</a>
+          <a href="https://linkedin.com/in/HarshaP1307" target="_blank"
+            style="color: var(--text-tertiary); font-size: 0.9rem;">LinkedIn</a>
+          <a href="https://github.com/harshaparashuram" target="_blank"
+            style="color: var(--text-tertiary); font-size: 0.9rem;">GitHub</a>
+          <a href="/resume/Harsha_P_Resume.pdf" download
+            style="color: var(--text-tertiary); font-size: 0.9rem;">Resume</a>
+        </div>
+        <p style="color: var(--text-tertiary); font-size: 0.85rem;">© 2026 Harsha P</p>
       </div>
     </div>
   </footer>
@@ -3087,7 +3337,7 @@
 
     document.addEventListener('DOMContentLoaded', () => {
       initTheme();
-      document.querySelectorAll('.projectCard, .expertiseCard, .resumeItem, .contactCard, .highlightItem').forEach(el => observer.observe(el));
+      document.querySelectorAll('.projectCard, .expertiseCard, .resumeItem, .contactCard, .highlightItem, .testimonialCard, .timelineItem').forEach(el => observer.observe(el));
 
       document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
